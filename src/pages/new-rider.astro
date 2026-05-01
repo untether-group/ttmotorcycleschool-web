@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -12,9 +12,9 @@ import CTAButton from '../components/CTAButton.astro';
       <span class="section__eyebrow">Start Here</span>
       <h1 class="page-hero__title">New to Riding?</h1>
       <p class="page-hero__sub">
-        You're in the right place. Whether you've never sat on a bike or you're just
-        exploring whether motorcycling is for you — TT Motorcycle School will get you
-        riding safely and confidently.
+        You're in the right place. Whether you've never sat on a bike or you're
+        just exploring whether motorcycling is for you, TT Motorcycle School
+        will get you riding safely and confidently.
       </p>
     </div>
   </section>
@@ -24,47 +24,81 @@ import CTAButton from '../components/CTAButton.astro';
       <div class="prose">
         <h2>Where Do I Start?</h2>
         <p>
-          If you're a complete beginner, the first step is your <strong>Compulsory Basic Training (CBT)</strong>.
-          This is a legal requirement before you can ride on UK roads, and it's a brilliant foundation
-          for everything that follows.
+          If you're a complete beginner, the first step is your <strong
+            >Compulsory Basic Training (CBT)</strong
+          >. This is a legal requirement before you can ride on UK roads, and
+          it's a brilliant foundation for everything that follows.
         </p>
         <p>
-          At TT Motorcycle School we make the CBT a positive, enjoyable experience. You don't need any
-          prior experience — just a positive attitude and a willingness to learn.
+          At TT Motorcycle School we make the CBT a positive, enjoyable
+          experience. You don't need any prior experience just a positive
+          attitude and a willingness to learn.
+        </p>
+
+        <p>
+          Included in the course price is: motorcycle or scooter hire,
+          motorcycle safety clothing and a helmet.
         </p>
 
         <h2>What to Expect</h2>
-        <p>
-          Your CBT day covers five elements:
-        </p>
+        <p>Your CBT day covers five elements:</p>
         <ol>
-          <li><strong>Introduction and eyesight check</strong> — a safety briefing and paperwork</li>
-          <li><strong>Practical on-site training</strong> — learning to control the bike in a safe, off-road environment</li>
-          <li><strong>Essential riding skills</strong> — braking, steering, gear changes</li>
-          <li><strong>On-road training</strong> — riding on public roads with your instructor</li>
-          <li><strong>Certificate of completion</strong> — your DL196 certificate, valid for 2 years</li>
+          <li>
+            <strong>Introduction and eyesight check</strong> — a safety briefing and
+            paperwork
+          </li>
+          <li>
+            <strong>Practical on-site training</strong> — learning to control the
+            bike in a safe, off-road environment
+          </li>
+          <li>
+            <strong>Essential riding skills</strong> — braking, steering, gear changes
+          </li>
+          <li>
+            <strong>On-road training</strong> — riding on public roads with your instructor
+          </li>
+          <li>
+            <strong>Certificate of completion</strong> — your DL196 certificate, valid
+            for 2 years
+          </li>
         </ol>
 
         <h2>What You'll Need</h2>
         <ul>
           <li>A valid UK driving licence or provisional licence</li>
-          <li>To be at least 16 years old (mopeds) or 17 years old (motorcycles)</li>
-          <li>Appropriate clothing — <a href="/what-to-wear/">see our guide</a></li>
+          <li>
+            To be at least 16 years old (mopeds) or 17 years old (motorcycles)
+          </li>
+          <li>
+            Appropriate clothing — <a href="/what-to-wear/">see our guide</a>
+          </li>
           <li>Glasses or contact lenses if required</li>
+          <li>
+            Able to ride a bicycle competently with good control and balance
+          </li>
         </ul>
 
         <h2>What Comes Next?</h2>
         <p>
-          After your CBT, you can ride solo on a restricted machine. From there, many riders go on to
-          their <a href="/full-licence/">full motorcycle licence</a> — we'll guide you through every step of that journey too.
+          After your CBT, you can ride solo on a restricted machine. From there,
+          many riders go on to their <a href="/full-licence/"
+            >full motorcycle licence</a
+          >. We'll guide you through every step of that journey too.
         </p>
       </div>
 
       <aside class="sidebar">
         <div class="sidebar__card">
           <h3 class="sidebar__title">Ready to Book?</h3>
-          <p class="sidebar__body">CBT sessions fill up fast. Secure your spot online today.</p>
-          <CTAButton href="/cbtbooking/" label="Book Your CBT" variant="accent" size="md" />
+          <p class="sidebar__body">
+            CBT sessions fill up fast. Secure your spot online today.
+          </p>
+          <CTAButton
+            href="/cbtbooking/"
+            label="Book Your CBT"
+            variant="accent"
+            size="md"
+          />
         </div>
         <div class="sidebar__card sidebar__card--plain">
           <h3 class="sidebar__title">Useful Links</h3>
@@ -90,7 +124,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 320px; }
+    .content-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .sidebar__card {
