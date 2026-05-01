@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -12,8 +12,9 @@ import CTAButton from '../components/CTAButton.astro';
       <span class="section__eyebrow">Compulsory Basic Training</span>
       <h1 class="page-hero__title">CBT — Your First Step on Two Wheels</h1>
       <p class="page-hero__sub">
-        Your CBT certificate is the legal requirement to ride on UK roads. TT Motorcycle School
-        delivers professional, friendly CBT training across Sussex.
+        Your CBT certificate is the legal requirement to ride on UK roads. TT
+        Motorcycle School delivers professional, friendly CBT training across
+        Sussex.
       </p>
     </div>
   </section>
@@ -23,48 +24,83 @@ import CTAButton from '../components/CTAButton.astro';
       <div class="prose">
         <h2>What is the CBT?</h2>
         <p>
-          The Compulsory Basic Training (CBT) is a one-day course that every new rider must complete
-          before riding a moped or motorcycle on public roads in the UK. Once complete, you receive
-          a DL196 certificate, valid for 2 years.
+          The Compulsory Basic Training (CBT) is a one-day course that every new
+          rider must complete before riding a moped or motorcycle on public
+          roads in the UK. Once complete, you receive a DL196 certificate, valid
+          for 2 years.
         </p>
 
-        <h2>What Does the Day Involve?</h2>
-        <p>The DVSA CBT syllabus has five elements:</p>
+        <h2>Where Do I Start?</h2>
+        <p>
+          At TT Motorcycle School we make the CBT a positive, enjoyable
+          experience. You don't need any prior experience just a positive
+          attitude and a willingness to learn.
+        </p>
+
+        <p>
+          Included in the course price is: motorcycle or scooter hire,
+          motorcycle safety clothing and a helmet.
+        </p>
+
+        <h2>What to Expect</h2>
+        <p>Your CBT day covers five elements:</p>
         <ol>
-          <li><strong>Element A:</strong> Introduction — eyesight check, documents, clothing, and bike familiarisation</li>
-          <li><strong>Element B:</strong> Practical on-site training — machine controls, moving off, stopping, gear changes</li>
-          <li><strong>Element C:</strong> Essential riding skills — U-turns, figure of 8, emergency stop</li>
-          <li><strong>Element D:</strong> Practical on-road riding — with instructor guidance on public roads</li>
-          <li><strong>Element E:</strong> Certificate of completion — your DL196 issued upon success</li>
+          <li>
+            <strong>Introduction and eyesight check</strong> — a safety briefing and
+            paperwork
+          </li>
+          <li>
+            <strong>Practical on-site training</strong> — learning to control the
+            bike in a safe, off-road environment
+          </li>
+          <li>
+            <strong>Essential riding skills</strong> — braking, steering, gear changes
+          </li>
+          <li>
+            <strong>On-road training</strong> — riding on public roads with your instructor
+          </li>
+          <li>
+            <strong>Certificate of completion</strong> — your DL196 certificate, valid
+            for 2 years
+          </li>
         </ol>
 
-        <h2>What Happens After My CBT?</h2>
-        <p>
-          With your CBT certificate you can legally ride on a restricted machine (up to 125cc, 11kW) solo
-          on public roads. To ride any motorcycle without restriction, you will need to progress to
-          your <a href="/full-licence/">full motorcycle licence</a>.
-        </p>
-
-        <h2>Requirements</h2>
+        <h2>What You'll Need</h2>
         <ul>
-          <li>Valid UK provisional or full driving licence</li>
-          <li>Minimum age 16 (mopeds) or 17 (motorcycles)</li>
-          <li>Pass a basic eyesight test (glasses/contacts fine)</li>
-          <li>Appropriate clothing — <a href="/what-to-wear/">see our guide</a></li>
+          <li>A valid UK driving licence or provisional licence</li>
+          <li>
+            To be at least 16 years old (mopeds) or 17 years old (motorcycles)
+          </li>
+          <li>
+            Appropriate clothing — <a href="/what-to-wear/">see our guide</a>
+          </li>
+          <li>Glasses or contact lenses if required</li>
+          <li>
+            Able to ride a bicycle competently with good control and balance
+          </li>
         </ul>
 
-        <h2>What's Provided?</h2>
+        <h2>What Comes Next?</h2>
         <p>
-          We provide all training motorcycles. You just need to turn up in the right gear. See our
-          <a href="/what-to-wear/">What to Wear</a> guide for exactly what's needed.
+          After your CBT, you can ride solo on a restricted machine. From there,
+          many riders go on to their <a href="/full-licence/"
+            >full motorcycle licence</a
+          >. We'll guide you through every step of that journey too.
         </p>
       </div>
 
       <aside class="sidebar">
         <div class="sidebar__card">
           <h3 class="sidebar__title">Book Your CBT</h3>
-          <p class="sidebar__body">Secure your place online. Spaces fill up quickly.</p>
-          <CTAButton href="/cbtbooking/" label="Book Now" variant="accent" size="md" />
+          <p class="sidebar__body">
+            Secure your place online. Spaces fill up quickly.
+          </p>
+          <CTAButton
+            href="/cbtbooking/"
+            label="Book Now"
+            variant="accent"
+            size="md"
+          />
         </div>
         <div class="sidebar__card sidebar__card--plain">
           <h3 class="sidebar__title">Quick Info</h3>
@@ -91,7 +127,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 320px; }
+    .content-grid {
+      grid-template-columns: 1fr 320px;
+    }
   }
 
   .sidebar__card {
