@@ -4,7 +4,8 @@ import sitemap from '@astrojs/sitemap';
 
 // https://astro.build/config
 export default defineConfig({
-  site: 'https://www.ttmotorcycleschool.com',
+  site: 'https://untether-group.github.io',
+  base: '/ttmotorcycleschool-web',
   trailingSlash: 'always',
   integrations: [
     sitemap(),
