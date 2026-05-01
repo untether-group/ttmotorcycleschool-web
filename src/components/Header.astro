@@ -22,7 +22,12 @@ const url = (path: string) => `${base}${path}`;
       class="header__logo"
       aria-label="TT Motorcycle School — Home"
     >
-      <img src="/logo.svg" alt="TT Motorcycle School" width="160" height="48" />
+      <img
+        src={url("/logo.svg")}
+        alt="TT Motorcycle School"
+        width="160"
+        height="48"
+      />
     </a>
 
     <!-- Desktop nav -->
