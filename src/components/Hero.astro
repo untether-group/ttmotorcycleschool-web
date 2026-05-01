@@ -3,8 +3,9 @@ import CTAButton from './CTAButton.astro';
 ---
 
 <section class="hero" aria-label="Welcome to TT Motorcycle School">
+  <div class="hero__bg-image"></div>
   <div class="hero__bg-overlay"></div>
-  <div class="container hero__content">
+  <div class="container hero__content hero__content-bg">
     <span class="hero__eyebrow">CBT · Full Licence · Advanced Riding</span>
     <h1 class="hero__title">
       Get on the Road.<br />
@@ -132,5 +133,25 @@ import CTAButton from './CTAButton.astro';
     width: 1px;
     height: 32px;
     background-color: rgba(255,255,255,0.15);
+  }
+  .hero__content-bg {
+    background: rgba(17, 17, 17, 0.82);
+    border-radius: var(--radius-lg);
+    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+    padding: var(--space-8) var(--space-6);
+    max-width: 700px;
+    margin-inline: auto;
+    backdrop-filter: blur(2px);
+  }
+  .hero__bg-image {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background: url('/images/hero-image.png') center center/cover no-repeat;
+    width: 100%;
+    height: 100%;
+    opacity: 0.55;
+    pointer-events: none;
+    transition: opacity 0.3s;
   }
 </style>
