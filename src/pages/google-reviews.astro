@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -12,8 +12,9 @@ import CTAButton from '../components/CTAButton.astro';
       <span class="section__eyebrow">Google Reviews</span>
       <h1 class="page-hero__title">Our Google Reviews</h1>
       <p class="page-hero__sub">
-        See what riders are saying about TT Motorcycle School on Google. We're proud of our
-        five-star rating and the feedback from our students means the world to us.
+        See what riders are saying about TT Motorcycle School on Google. We're
+        proud of our five-star rating and the feedback from our students means
+        the world to us.
       </p>
     </div>
   </section>
@@ -23,31 +24,34 @@ import CTAButton from '../components/CTAButton.astro';
       <div class="reviews-badge">
         <div class="reviews-badge__stars" aria-label="5 star rating">★★★★★</div>
         <div class="reviews-badge__label">Rated 5 Stars on Google</div>
-        <p class="reviews-badge__sub">Based on reviews from verified Google users</p>
+        <p class="reviews-badge__sub">
+          Based on reviews from verified Google users
+        </p>
       </div>
 
       <!-- Google Reviews widget / embed goes here -->
-      <!-- Replace the placeholder below with your Google Reviews embed or widget code -->
-      <div class="reviews-embed-placeholder">
-        <p>
-          Google Reviews widget will appear here.
-          To embed your reviews, use a third-party widget (e.g. Elfsight, Google Reviews Widget)
-          or link directly to your Google Business profile.
-        </p>
-        <a
-          href="https://www.google.com/maps/search/TT+Motorcycle+School"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="reviews-embed-placeholder__link"
-        >
-          View our Google Business Profile →
-        </a>
+      <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+      <script src="https://elfsightcdn.com/platform.js" async></script>
+      <div
+        class="elfsight-app-627f8188-6b5b-4392-81c2-e6f0267f861e"
+        data-elfsight-app-lazy
+      >
       </div>
 
       <div class="reviews-cta">
-        <CTAButton href="/testimonials/" label="Read Written Testimonials" variant="primary" size="md" />
+        <CTAButton
+          href="/testimonials/"
+          label="Read Written Testimonials"
+          variant="primary"
+          size="md"
+        />
         &nbsp;&nbsp;
-        <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+        <CTAButton
+          href="/cbtbooking/"
+          label="Book Your Training"
+          variant="accent"
+          size="md"
+        />
       </div>
     </div>
   </section>
