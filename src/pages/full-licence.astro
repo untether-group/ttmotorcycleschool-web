@@ -1,25 +1,25 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 
 const categories = [
   {
-    name: 'A1 — Light Motorcycle',
-    age: '17+',
-    bikes: 'Up to 125cc, 11kW',
-    desc: 'The A1 licence lets you ride light motorcycles. Achieved through Module 1 and Module 2 tests.',
+    name: "A1 — Light Motorcycle",
+    age: "17+",
+    bikes: "Up to 125cc, 11kW",
+    desc: "The A1 licence lets you ride light motorcycles. Achieved through Module 1 and Module 2 tests.",
   },
   {
-    name: 'A2 — Medium Motorcycle',
-    age: '19+',
-    bikes: 'Up to 35kW',
-    desc: 'A2 is the most popular full licence for new adult riders. Opens up a wide range of motorcycles.',
+    name: "A2 — Medium Motorcycle",
+    age: "19+",
+    bikes: "Up to 35kW",
+    desc: "A2 is the most popular full licence for new adult riders. Opens up a wide range of motorcycles.",
   },
   {
-    name: 'A — Full Unrestricted',
-    age: '24+ (direct access) or 21+ (progressive access)',
-    bikes: 'Any motorcycle, any power',
-    desc: 'Full, unrestricted access to any motorcycle. The ultimate goal for many riders.',
+    name: "A — Full Unrestricted",
+    age: "24+ (direct access) or 21+ (progressive access)",
+    bikes: "Any motorcycle, any power",
+    desc: "Full, unrestricted access to any motorcycle. The ultimate goal for many riders.",
   },
 ];
 ---
@@ -33,8 +33,12 @@ const categories = [
       <span class="section__eyebrow">Motorcycle Licences</span>
       <h1 class="page-hero__title">Full Motorcycle Licence Training</h1>
       <p class="page-hero__sub">
-        Ready to go beyond your CBT? We offer structured training for the A1, A2 and full A
-        licence categories — preparing you thoroughly for your Module 1 and Module 2 tests.
+        Ready to go beyond your CBT? We offer structured training for the A1, A2
+        and full A licence categories — preparing you thoroughly for your Module
+        1 and Module 2 tests.
+      </p>
+      <p class="page-hero__cta-call">
+        Call to book: <a href="tel:01273041925">01273 041925</a>
       </p>
     </div>
   </section>
@@ -45,51 +49,67 @@ const categories = [
         <div class="prose">
           <h2>Licence Categories</h2>
           <p>
-            The UK motorcycle licence system has three main categories. The right one for you
-            depends on your age and what you want to ride.
+            The UK motorcycle licence system has three main categories. The
+            right one for you depends on your age and what you want to ride.
           </p>
         </div>
 
         <div class="licence-cards">
-          {categories.map(cat => (
-            <div class="licence-card">
-              <h3 class="licence-card__title">{cat.name}</h3>
-              <div class="licence-card__meta">
-                <span><strong>Minimum age:</strong> {cat.age}</span>
-                <span><strong>Machines:</strong> {cat.bikes}</span>
+          {
+            categories.map((cat) => (
+              <div class="licence-card">
+                <h3 class="licence-card__title">{cat.name}</h3>
+                <div class="licence-card__meta">
+                  <span>
+                    <strong>Minimum age:</strong> {cat.age}
+                  </span>
+                  <span>
+                    <strong>Machines:</strong> {cat.bikes}
+                  </span>
+                </div>
+                <p class="licence-card__desc">{cat.desc}</p>
               </div>
-              <p class="licence-card__desc">{cat.desc}</p>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
         <div class="prose">
           <h2>The Test Structure</h2>
           <p>
-            To get your full licence you need to pass two practical tests — Module 1 (off-road
-            manoeuvres) and Module 2 (on-road riding assessment) — plus the theory test if you
-            haven't already passed it.
+            To get your full licence you need to pass two practical tests —
+            Module 1 (off-road manoeuvres) and Module 2 (on-road riding
+            assessment) — plus the theory test if you haven't already passed it.
           </p>
           <h3>Module 1</h3>
           <p>
-            An off-road test at a DVSA test centre covering slow-speed control, slalom,
-            figure of 8, U-turn, emergency stop, and swerve.
+            An off-road test at a DVSA test centre covering slow-speed control,
+            slalom, figure of 8, U-turn, emergency stop, and swerve.
           </p>
           <h3>Module 2</h3>
           <p>
-            An on-road test of approximately 40 minutes, assessed on your riding ability,
-            hazard perception, and following instructions.
+            An on-road test of approximately 40 minutes, assessed on your riding
+            ability, hazard perception, and following instructions.
           </p>
           <h2>How We Prepare You</h2>
           <p>
-            TT Motorcycle School provides structured lessons covering every element of both tests.
-            We'll tell you honestly when we think you're ready — we won't push you to test before
-            your time.
+            TT Motorcycle School provides structured lessons covering every
+            element of both tests. We'll tell you honestly when we think you're
+            ready — we won't push you to test before your time.
           </p>
-        </div>
 
-        <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book Training" variant="accent" size="md" />
+          <h2>Important Information</h2>
+          <p>You will need to bring:</p>
+          <ul>
+            <li>Driving licence: photo card or paper licence with passport</li>
+            <li>
+              Theory &amp; CBT certificates if you are taking the full licence
+            </li>
+            <li>
+              Suitable clothing and footwear (helmets, jackets, gloves and
+              waterproofs are provided)
+            </li>
+            <li>A snack or cash for refreshments</li>
+          </ul>
         </div>
       </div>
 
@@ -110,6 +130,22 @@ const categories = [
 </BaseLayout>
 
 <style>
+  .page-hero__cta-call {
+    margin-top: var(--space-4);
+    font-size: var(--text-lg);
+    font-weight: 700;
+    color: var(--color-white);
+  }
+
+  .page-hero__cta-call a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .page-hero__cta-call a:hover {
+    color: var(--color-accent-hover);
+  }
+
   .content-grid {
     display: grid;
     grid-template-columns: 1fr;
@@ -118,7 +154,9 @@ const categories = [
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 280px; }
+    .content-grid {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .licence-cards {
