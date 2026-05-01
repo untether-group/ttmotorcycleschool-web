@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Advanced Rider — TT Motorcycle School"
+  description="Advanced motorcycle rider training in Sussex with TT Motorcycle School. IAM and RoSPA-aligned coaching to improve your skills, safety and confidence."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Advanced Riding</span>
+      <h1 class="page-hero__title">Advanced Rider Training</h1>
+      <p class="page-hero__sub">
+        Already licensed? Take your riding to the next level with advanced coaching aligned
+        to IAM and RoSPA standards. Ride smarter, safer, and with greater confidence.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>Who Is This For?</h2>
+        <p>
+          Advanced rider training is ideal for licensed riders who want to sharpen their skills,
+          prepare for an IAM or RoSPA assessment, or simply become a better, safer road rider.
+          No matter how experienced you are, there is always more to learn.
+        </p>
+
+        <h2>What We Cover</h2>
+        <ul>
+          <li>Riding plan and systematic approach (Roadcraft)</li>
+          <li>Hazard perception and anticipation</li>
+          <li>Cornering technique and lines</li>
+          <li>Braking, acceleration, and throttle control</li>
+          <li>Positioning and lane discipline</li>
+          <li>Commentary riding</li>
+          <li>Preparation for IAM and RoSPA assessments</li>
+        </ul>
+
+        <h2>The Benefits</h2>
+        <p>
+          Advanced trained riders are statistically far less likely to be involved in a collision.
+          Training also often leads to reduced motorcycle insurance premiums once you hold an
+          advanced certificate.
+        </p>
+
+        <h2>Our Approach</h2>
+        <p>
+          Sessions are conducted on your own motorcycle, on real roads, with structured
+          feedback from your instructor. We tailor every session to your current level and goals.
+        </p>
+
+        <div style="margin-top: var(--space-8);">
+          <CTAButton href="/cbtbooking/" label="Book Advanced Training" variant="accent" size="md" />
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/OneToOneTraining/">One-to-One Training</a></li>
+            <li><a href="/bespoke-refresher/">Bespoke & Refresher</a></li>
+            <li><a href="/prices/">Pricing</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 280px; }
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

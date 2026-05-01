@@ -1,0 +1,284 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Hero from '../components/Hero.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const services = [
+  {
+    title: 'New Rider',
+    icon: '🏍️',
+    desc: "Never ridden before? We'll guide you through everything from the basics to your first solo ride.",
+    href: '/new-rider/',
+  },
+  {
+    title: 'CBT',
+    icon: '📋',
+    desc: 'Compulsory Basic Training — the first step to riding legally on UK roads. One day, fully guided.',
+    href: '/cbt/',
+  },
+  {
+    title: 'Full Licence',
+    icon: '🎓',
+    desc: 'Ready for your full motorcycle licence? We offer structured training for A1, A2 and A category.',
+    href: '/full-licence/',
+  },
+  {
+    title: 'Advanced Rider',
+    icon: '🏆',
+    desc: 'Take your skills to the next level with IAM or RoSPA-aligned advanced rider development.',
+    href: '/advanced-rider/',
+  },
+  {
+    title: 'One-to-One Training',
+    icon: '🎯',
+    desc: 'Fully personalised sessions tailored to your pace, goals, and riding style.',
+    href: '/OneToOneTraining/',
+  },
+  {
+    title: 'Bespoke & Refresher',
+    icon: '🔄',
+    desc: "Returning to riding after a break, or want to work on specific skills? We've got you covered.",
+    href: '/bespoke-refresher/',
+  },
+  {
+    title: 'E-bikes',
+    icon: '⚡',
+    desc: 'Understand the licence requirements for electric bikes and scooters in the UK.',
+    href: '/e-bikes/',
+  },
+  {
+    title: 'Prices',
+    icon: '💷',
+    desc: 'Transparent, competitive pricing for all our training courses. No hidden fees.',
+    href: '/prices/',
+  },
+];
+
+const testimonials = [
+  {
+    quote: "Passed my CBT first time with TT. The instructor was patient, professional, and made me feel completely at ease.",
+    author: "Jamie L., Brighton",
+  },
+  {
+    quote: "Brilliant school. I went from never having ridden to passing my full licence in a few months. Highly recommend.",
+    author: "Sarah K., Worthing",
+  },
+  {
+    quote: "Outstanding one-to-one training. My confidence on the road has improved massively.",
+    author: "Mark T., Horsham",
+  },
+];
+---
+
+<BaseLayout
+  title="TT Motorcycle School"
+  description="Professional motorcycle training in Sussex. CBT, full licence, one-to-one, and advanced rider courses. DVSA approved. Book online today."
+>
+  <!-- Hero -->
+  <Hero />
+
+  <!-- Services -->
+  <section class="section" aria-labelledby="services-heading">
+    <div class="container">
+      <span class="section__eyebrow">What We Offer</span>
+      <h2 class="section__heading" id="services-heading">Training for Every Rider</h2>
+      <p class="section__sub">
+        From your very first time on a bike to advanced riding — TT Motorcycle School
+        offers expert-led training across Sussex and the surrounding area.
+      </p>
+      <div class="grid-3 services-grid">
+        {services.map(s => (
+          <a href={s.href} class="service-card">
+            <span class="service-card__icon" aria-hidden="true">{s.icon}</span>
+            <h3 class="service-card__title">{s.title}</h3>
+            <p class="service-card__desc">{s.desc}</p>
+            <span class="service-card__link">Find out more →</span>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Why TT -->
+  <section class="section section--dark" aria-labelledby="why-heading">
+    <div class="container why-section">
+      <div>
+        <span class="section__eyebrow">Why TT Motorcycle School?</span>
+        <h2 class="section__heading" id="why-heading">
+          Experienced. Friendly. Professional.
+        </h2>
+        <p class="section__sub">
+          We know learning to ride can feel daunting. That's why every instructor at
+          TT Motorcycle School is fully DVSA-approved and dedicated to building your
+          skills and confidence at your own pace.
+        </p>
+        <ul class="why-list">
+          <li class="why-list__item">
+            <span class="why-list__check" aria-hidden="true">✓</span>
+            DVSA-approved instructors with years of experience
+          </li>
+          <li class="why-list__item">
+            <span class="why-list__check" aria-hidden="true">✓</span>
+            Small class sizes and personalised attention
+          </li>
+          <li class="why-list__item">
+            <span class="why-list__check" aria-hidden="true">✓</span>
+            All training motorcycles provided — no bike needed
+          </li>
+          <li class="why-list__item">
+            <span class="why-list__check" aria-hidden="true">✓</span>
+            Flexible booking via Acuity — book at a time that suits you
+          </li>
+          <li class="why-list__item">
+            <span class="why-list__check" aria-hidden="true">✓</span>
+            Based in Sussex, covering the surrounding counties
+          </li>
+        </ul>
+        <CTAButton href="/about/" label="About TT Motorcycle School" variant="outline" size="md" />
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials strip -->
+  <section class="section section--grey" aria-labelledby="testimonials-heading">
+    <div class="container">
+      <span class="section__eyebrow">What Our Students Say</span>
+      <h2 class="section__heading" id="testimonials-heading">Trusted by Riders Across Sussex</h2>
+      <div class="grid-3">
+        {testimonials.map(t => (
+          <div class="testimonial">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p class="testimonial__quote">"{t.quote}"</p>
+            <span class="testimonial__author">— {t.author}</span>
+          </div>
+        ))}
+      </div>
+      <div class="home-reviews-cta">
+        <CTAButton href="/testimonials/" label="Read All Testimonials" variant="primary" size="md" />
+        <CTAButton href="/google-reviews/" label="See Google Reviews" variant="outline" size="md" />
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA banner -->
+  <section class="cta-banner" aria-label="Book your training">
+    <div class="container cta-banner__inner">
+      <div>
+        <h2 class="cta-banner__title">Ready to get started?</h2>
+        <p class="cta-banner__sub">Spaces fill up fast. Book your CBT or training session online today.</p>
+      </div>
+      <CTAButton href="/cbtbooking/" label="Book Now" variant="accent" size="lg" />
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .services-grid {
+    margin-top: var(--space-2);
+  }
+
+  .service-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-surface);
+    border: 1px solid var(--color-border);
+    border-radius: var(--radius-lg);
+    padding: var(--space-8);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow var(--transition), transform var(--transition);
+  }
+
+  .service-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-3px);
+  }
+
+  .service-card__icon {
+    font-size: 2rem;
+    margin-bottom: var(--space-4);
+    display: block;
+  }
+
+  .service-card__title {
+    font-size: var(--text-xl);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+    color: var(--color-text);
+  }
+
+  .service-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    flex: 1;
+    margin-bottom: var(--space-5);
+  }
+
+  .service-card__link {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .service-card:hover .service-card__link {
+    color: var(--color-accent-hover);
+  }
+
+  .why-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    margin-bottom: var(--space-8);
+  }
+
+  .why-list__item {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+    font-size: var(--text-base);
+    color: #ccc;
+    line-height: var(--leading-snug);
+  }
+
+  .why-list__check {
+    color: var(--color-accent);
+    font-weight: 800;
+    flex-shrink: 0;
+    margin-top: 2px;
+  }
+
+  .home-reviews-cta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    margin-top: var(--space-10);
+  }
+
+  .cta-banner {
+    background-color: var(--color-accent);
+    padding-block: var(--space-12);
+  }
+
+  .cta-banner__inner {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-6);
+  }
+
+  .cta-banner__title {
+    font-size: var(--text-2xl);
+    font-weight: 800;
+    color: var(--color-white);
+    margin-bottom: var(--space-2);
+  }
+
+  .cta-banner__sub {
+    font-size: var(--text-base);
+    color: rgba(255,255,255,0.85);
+  }
+</style>
+

@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="One To One Training — TT Motorcycle School"
+  description="One-to-one motorcycle training in Sussex with TT Motorcycle School. Fully personalised sessions for beginners, returning riders, and advanced learners."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Personalised Training</span>
+      <h1 class="page-hero__title">One-to-One Training</h1>
+      <p class="page-hero__sub">
+        Your training, your pace. One-to-one sessions give you the full focus of your
+        instructor, tailored entirely to your goals and current ability.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>Why One-to-One?</h2>
+        <p>
+          Group courses are great, but sometimes you need more. One-to-one training gives you
+          the undivided attention of an experienced instructor, allowing you to progress at your
+          own pace without any pressure.
+        </p>
+
+        <h2>Who Can Benefit?</h2>
+        <ul>
+          <li>Beginners who want a slower, more personalised introduction to riding</li>
+          <li>Learners preparing for Module 1 or Module 2 tests who want focused practice</li>
+          <li>Returning riders who want to rebuild confidence before riding solo</li>
+          <li>Experienced riders looking to refine specific skills</li>
+          <li>Anyone who learns better in a one-to-one environment</li>
+        </ul>
+
+        <h2>What's Covered?</h2>
+        <p>
+          You set the agenda. We'll discuss your goals before the session and build a plan
+          around them. Every session is different because every rider is different.
+        </p>
+
+        <h2>How to Book</h2>
+        <p>
+          You can book directly online, or <a href="/contact/">contact us</a> first to discuss
+          what you'd like to achieve. We'll match you with the right instructor and duration.
+        </p>
+
+        <div style="margin-top: var(--space-8);">
+          <CTAButton href="/cbtbooking/" label="Book a Session" variant="accent" size="md" />
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/bespoke-refresher/">Bespoke & Refresher</a></li>
+            <li><a href="/advanced-rider/">Advanced Rider</a></li>
+            <li><a href="/prices/">Pricing</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 280px; }
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

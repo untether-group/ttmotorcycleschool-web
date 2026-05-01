@@ -1,0 +1,153 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="CBT — TT Motorcycle School"
+  description="Compulsory Basic Training (CBT) in Sussex with TT Motorcycle School. One day course, DVSA approved, all bikes provided. Book your CBT online."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Compulsory Basic Training</span>
+      <h1 class="page-hero__title">CBT — Your First Step on Two Wheels</h1>
+      <p class="page-hero__sub">
+        Your CBT certificate is the legal requirement to ride on UK roads. TT Motorcycle School
+        delivers professional, friendly CBT training across Sussex.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>What is the CBT?</h2>
+        <p>
+          The Compulsory Basic Training (CBT) is a one-day course that every new rider must complete
+          before riding a moped or motorcycle on public roads in the UK. Once complete, you receive
+          a DL196 certificate, valid for 2 years.
+        </p>
+
+        <h2>What Does the Day Involve?</h2>
+        <p>The DVSA CBT syllabus has five elements:</p>
+        <ol>
+          <li><strong>Element A:</strong> Introduction — eyesight check, documents, clothing, and bike familiarisation</li>
+          <li><strong>Element B:</strong> Practical on-site training — machine controls, moving off, stopping, gear changes</li>
+          <li><strong>Element C:</strong> Essential riding skills — U-turns, figure of 8, emergency stop</li>
+          <li><strong>Element D:</strong> Practical on-road riding — with instructor guidance on public roads</li>
+          <li><strong>Element E:</strong> Certificate of completion — your DL196 issued upon success</li>
+        </ol>
+
+        <h2>What Happens After My CBT?</h2>
+        <p>
+          With your CBT certificate you can legally ride on a restricted machine (up to 125cc, 11kW) solo
+          on public roads. To ride any motorcycle without restriction, you will need to progress to
+          your <a href="/full-licence/">full motorcycle licence</a>.
+        </p>
+
+        <h2>Requirements</h2>
+        <ul>
+          <li>Valid UK provisional or full driving licence</li>
+          <li>Minimum age 16 (mopeds) or 17 (motorcycles)</li>
+          <li>Pass a basic eyesight test (glasses/contacts fine)</li>
+          <li>Appropriate clothing — <a href="/what-to-wear/">see our guide</a></li>
+        </ul>
+
+        <h2>What's Provided?</h2>
+        <p>
+          We provide all training motorcycles. You just need to turn up in the right gear. See our
+          <a href="/what-to-wear/">What to Wear</a> guide for exactly what's needed.
+        </p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card">
+          <h3 class="sidebar__title">Book Your CBT</h3>
+          <p class="sidebar__body">Secure your place online. Spaces fill up quickly.</p>
+          <CTAButton href="/cbtbooking/" label="Book Now" variant="accent" size="md" />
+        </div>
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Quick Info</h3>
+          <ul class="sidebar__info-list">
+            <li><strong>Duration:</strong> Full day (approx. 6–8 hrs)</li>
+            <li><strong>Minimum age:</strong> 16 (moped) / 17 (motorcycle)</li>
+            <li><strong>Certificate valid:</strong> 2 years</li>
+            <li><strong>Bikes provided:</strong> Yes</li>
+            <li><strong>Location:</strong> Sussex</li>
+          </ul>
+          <a href="/prices/" class="sidebar__price-link">View CBT Price →</a>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 320px; }
+  }
+
+  .sidebar__card {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .sidebar__body {
+    font-size: var(--text-sm);
+    color: #ccc;
+    margin-bottom: var(--space-5);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__info-list {
+    list-style: none;
+    font-size: var(--text-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    margin-bottom: var(--space-5);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__info-list strong {
+    color: var(--color-text);
+  }
+
+  .sidebar__price-link {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__price-link:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

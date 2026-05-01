@@ -1,0 +1,126 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="About — TT Motorcycle School"
+  description="Learn about TT Motorcycle School — professional DVSA-approved motorcycle training in Sussex and surrounding counties. Meet the team behind the school."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Who We Are</span>
+      <h1 class="page-hero__title">About TT Motorcycle School</h1>
+      <p class="page-hero__sub">
+        Professional, friendly, and passionate about motorcycling. Here's a little about
+        who we are and what makes us different.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>Our Story</h2>
+        <p>
+          TT Motorcycle School was founded with a simple mission: to make professional motorcycle
+          training accessible, enjoyable, and genuinely useful for riders across Sussex and the
+          surrounding counties.
+        </p>
+        <p>
+          We know that taking the step to learn to ride — or returning to it — can feel
+          intimidating. That's why we've built a school that puts you at ease from the very
+          first contact, with experienced instructors who care about your progress as much as you do.
+        </p>
+
+        <h2>Our Instructors</h2>
+        <p>
+          Every instructor at TT Motorcycle School is fully DVSA-approved and brings years of
+          real-world riding experience to every lesson. We believe in honest, patient teaching
+          — we'll always tell you where you're doing well, and where you can improve.
+        </p>
+
+        <h2>Where We Operate</h2>
+        <p>
+          We're based in Sussex and operate across the surrounding counties. Get in touch if
+          you'd like to know more about our exact training locations and routes.
+        </p>
+
+        <h2>Our Approach</h2>
+        <ul>
+          <li>Small groups and one-to-one options for maximum personalisation</li>
+          <li>Training motorcycles provided for all CBT and licence courses</li>
+          <li>Flexible booking to fit around your schedule</li>
+          <li>Honest, constructive feedback every session</li>
+          <li>A culture of safety without making riding feel scary</li>
+        </ul>
+
+        <div style="margin-top: var(--space-8);">
+          <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+          &nbsp;&nbsp;
+          <CTAButton href="/contact/" label="Get in Touch" variant="primary" size="md" />
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Quick Facts</h3>
+          <ul class="sidebar__info-list">
+            <li><strong>Location:</strong> Sussex, UK</li>
+            <li><strong>Approved by:</strong> DVSA</li>
+            <li><strong>Courses:</strong> CBT, Full Licence, Advanced, One-to-One</li>
+            <li><strong>Bikes provided:</strong> Yes</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 280px; }
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__info-list {
+    list-style: none;
+    font-size: var(--text-sm);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__info-list strong {
+    color: var(--color-text);
+    display: block;
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

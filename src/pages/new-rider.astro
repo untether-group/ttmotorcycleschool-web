@@ -1,0 +1,144 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="New Rider — TT Motorcycle School"
+  description="New to motorcycles? TT Motorcycle School guides complete beginners through everything they need to start riding safely in Sussex. Start with CBT."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Start Here</span>
+      <h1 class="page-hero__title">New to Riding?</h1>
+      <p class="page-hero__sub">
+        You're in the right place. Whether you've never sat on a bike or you're just
+        exploring whether motorcycling is for you — TT Motorcycle School will get you
+        riding safely and confidently.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>Where Do I Start?</h2>
+        <p>
+          If you're a complete beginner, the first step is your <strong>Compulsory Basic Training (CBT)</strong>.
+          This is a legal requirement before you can ride on UK roads, and it's a brilliant foundation
+          for everything that follows.
+        </p>
+        <p>
+          At TT Motorcycle School we make the CBT a positive, enjoyable experience. You don't need any
+          prior experience — just a positive attitude and a willingness to learn.
+        </p>
+
+        <h2>What to Expect</h2>
+        <p>
+          Your CBT day covers five elements:
+        </p>
+        <ol>
+          <li><strong>Introduction and eyesight check</strong> — a safety briefing and paperwork</li>
+          <li><strong>Practical on-site training</strong> — learning to control the bike in a safe, off-road environment</li>
+          <li><strong>Essential riding skills</strong> — braking, steering, gear changes</li>
+          <li><strong>On-road training</strong> — riding on public roads with your instructor</li>
+          <li><strong>Certificate of completion</strong> — your DL196 certificate, valid for 2 years</li>
+        </ol>
+
+        <h2>What You'll Need</h2>
+        <ul>
+          <li>A valid UK driving licence or provisional licence</li>
+          <li>To be at least 16 years old (mopeds) or 17 years old (motorcycles)</li>
+          <li>Appropriate clothing — <a href="/what-to-wear/">see our guide</a></li>
+          <li>Glasses or contact lenses if required</li>
+        </ul>
+
+        <h2>What Comes Next?</h2>
+        <p>
+          After your CBT, you can ride solo on a restricted machine. From there, many riders go on to
+          their <a href="/full-licence/">full motorcycle licence</a> — we'll guide you through every step of that journey too.
+        </p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card">
+          <h3 class="sidebar__title">Ready to Book?</h3>
+          <p class="sidebar__body">CBT sessions fill up fast. Secure your spot online today.</p>
+          <CTAButton href="/cbtbooking/" label="Book Your CBT" variant="accent" size="md" />
+        </div>
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/cbt/">About CBT</a></li>
+            <li><a href="/full-licence/">Full Licence Courses</a></li>
+            <li><a href="/what-to-wear/">What to Wear</a></li>
+            <li><a href="/prices/">View Prices</a></li>
+            <li><a href="/contact/">Ask a Question</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 320px; }
+  }
+
+  .sidebar__card {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .sidebar__body {
+    font-size: var(--text-sm);
+    color: #ccc;
+    margin-bottom: var(--space-5);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

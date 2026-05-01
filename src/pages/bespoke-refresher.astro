@@ -1,0 +1,122 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+---
+
+<BaseLayout
+  title="Bespoke & Refresher — TT Motorcycle School"
+  description="Bespoke and refresher motorcycle training in Sussex with TT Motorcycle School. Returning to riding, or need to brush up on specific skills? We can help."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Tailored to You</span>
+      <h1 class="page-hero__title">Bespoke &amp; Refresher Training</h1>
+      <p class="page-hero__sub">
+        Had a break from riding? Want to work on something specific? Our bespoke and
+        refresher sessions are designed around your individual needs.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>Returning to Riding?</h2>
+        <p>
+          Life happens. Many riders put their bike away for months or years and then find
+          that getting back on feels daunting. A refresher session with TT Motorcycle School
+          is the perfect way to rebuild confidence in a safe, supported environment.
+        </p>
+
+        <h2>Bespoke Sessions</h2>
+        <p>
+          Not sure what you need? Tell us and we'll design a session around it. Popular
+          requests include:
+        </p>
+        <ul>
+          <li>Motorway riding confidence</li>
+          <li>Rural road and country lane technique</li>
+          <li>Slow-speed manoeuvres (car parks, tight spaces)</li>
+          <li>Night riding preparation</li>
+          <li>Riding a new or unfamiliar type of motorcycle</li>
+          <li>Pre-long trip confidence building</li>
+        </ul>
+
+        <h2>How It Works</h2>
+        <p>
+          Get in touch or book online. We'll have a brief chat about what you'd like to work on
+          and put together a session plan. Sessions can be on your own bike or one of ours,
+          depending on the nature of the training.
+        </p>
+
+        <div style="margin-top: var(--space-8);">
+          <CTAButton href="/cbtbooking/" label="Book a Session" variant="accent" size="md" />
+          &nbsp;&nbsp;
+          <CTAButton href="/contact/" label="Ask a Question" variant="primary" size="md" />
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Related</h3>
+          <ul class="sidebar__links">
+            <li><a href="/OneToOneTraining/">One-to-One Training</a></li>
+            <li><a href="/advanced-rider/">Advanced Rider</a></li>
+            <li><a href="/prices/">Pricing</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 280px; }
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

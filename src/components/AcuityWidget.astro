@@ -1,0 +1,34 @@
+---
+// Acuity Scheduling embed widget
+// Replace the src URL with your own Acuity scheduling link.
+// Find it in: Acuity → Business Settings → Scheduling Page Link
+const acuityURL = 'https://app.acuityscheduling.com/schedule.php?owner=YOUR_ACUITY_OWNER_ID';
+---
+
+<div class="acuity-widget">
+  <iframe
+    src={acuityURL}
+    title="Book your motorcycle training — TT Motorcycle School"
+    width="100%"
+    style="border: none;"
+    scrolling="yes"
+    loading="lazy"
+    class="acuity-widget__iframe"
+  ></iframe>
+</div>
+
+<style>
+  .acuity-widget {
+    width: 100%;
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+    box-shadow: var(--shadow-md);
+  }
+
+  .acuity-widget__iframe {
+    display: block;
+    min-height: 800px;
+    width: 100%;
+    border: none;
+  }
+</style>

@@ -1,0 +1,170 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const categories = [
+  {
+    title: 'Electric Bicycles (e-bikes)',
+    subtitle: 'No licence required',
+    points: [
+      'Motor up to 250W',
+      'Must not assist above 15.5mph (25km/h)',
+      'Rider must be 14 or older',
+      'No licence, insurance or registration needed',
+      'Can use cycle lanes',
+    ],
+  },
+  {
+    title: 'Speed Pedelecs',
+    subtitle: 'Treated as mopeds',
+    points: [
+      'Motor up to 500W',
+      'Assists up to 28mph (45km/h)',
+      'Requires a driving licence (category Q or AM)',
+      'Registration, insurance and helmet required',
+      'Cannot use cycle lanes',
+    ],
+  },
+  {
+    title: 'Electric Mopeds',
+    subtitle: 'CBT required',
+    points: [
+      'Max speed 28mph (45km/h)',
+      'Requires a CBT certificate and AM licence or full licence',
+      'Must be registered, taxed and insured',
+      'Helmet required at all times',
+      'Minimum age 16',
+    ],
+  },
+  {
+    title: 'Electric Motorcycles',
+    subtitle: 'Full licence required',
+    points: [
+      'Speeds above 28mph (45km/h)',
+      'Requires A1, A2 or full A licence',
+      'Must pass same tests as petrol motorcycles',
+      'Registered, taxed, insured as standard',
+      'Helmet and appropriate gear required',
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="E-bikes — TT Motorcycle School"
+  description="Understand the UK licence requirements for electric bikes, speed pedelecs, electric mopeds and electric motorcycles. Expert guidance from TT Motorcycle School."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Electric Vehicles</span>
+      <h1 class="page-hero__title">E-bikes &amp; Electric Riding: UK Licence Guide</h1>
+      <p class="page-hero__sub">
+        The rules around electric two-wheelers can be confusing. Here's a clear breakdown of
+        what licence (if any) you need to ride different types of electric bikes in the UK.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="prose" style="max-width:700px; margin-bottom: var(--space-10);">
+        <p>
+          UK law classifies electric two-wheelers differently depending on their motor power,
+          top speed and whether they provide pedal assistance. The key question is always:
+          <strong>what category does your vehicle fall into?</strong>
+        </p>
+      </div>
+
+      <div class="ebike-grid">
+        {categories.map(cat => (
+          <div class="ebike-card">
+            <h2 class="ebike-card__title">{cat.title}</h2>
+            <span class="ebike-card__badge">{cat.subtitle}</span>
+            <ul class="ebike-card__list">
+              {cat.points.map(p => <li>{p}</li>)}
+            </ul>
+          </div>
+        ))}
+      </div>
+
+      <div class="prose ebike-footer">
+        <h2>Need a CBT or Licence?</h2>
+        <p>
+          If your electric two-wheeler falls into the moped or motorcycle category, you'll need
+          to complete your training just like any other rider. TT Motorcycle School can help —
+          from <a href="/cbt/">CBT</a> through to your <a href="/full-licence/">full licence</a>.
+        </p>
+        <p>
+          <strong>Note:</strong> Regulations around electric vehicles are evolving.
+          Always check the latest DVLA and government guidance for the most current rules.
+        </p>
+      </div>
+
+      <div style="margin-top: var(--space-8);">
+        <CTAButton href="/cbt/" label="Learn About CBT" variant="accent" size="md" />
+        &nbsp;&nbsp;
+        <CTAButton href="/contact/" label="Ask a Question" variant="primary" size="md" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .ebike-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    margin-bottom: var(--space-12);
+  }
+
+  @media (min-width: 640px) {
+    .ebike-grid { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  .ebike-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border-top: 4px solid var(--color-accent);
+  }
+
+  .ebike-card__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-2);
+  }
+
+  .ebike-card__badge {
+    display: inline-block;
+    font-size: var(--text-xs);
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--color-accent);
+    margin-bottom: var(--space-4);
+  }
+
+  .ebike-card__list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+  }
+
+  .ebike-card__list li::before {
+    content: '• ';
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .ebike-footer {
+    max-width: 700px;
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

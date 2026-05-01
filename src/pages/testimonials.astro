@@ -1,0 +1,154 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const testimonials = [
+  {
+    quote: "Passed my CBT first time. The instructor was calm, patient, and explained everything really clearly. Would recommend TT to anyone.",
+    author: "Jamie L.",
+    location: "Brighton",
+    course: "CBT",
+  },
+  {
+    quote: "I went from complete beginner to full A2 licence in four months. The structured approach and honest feedback made all the difference.",
+    author: "Sarah K.",
+    location: "Worthing",
+    course: "Full Licence",
+  },
+  {
+    quote: "Outstanding one-to-one sessions. My confidence has improved massively — I actually enjoy riding now instead of feeling nervous.",
+    author: "Mark T.",
+    location: "Horsham",
+    course: "One-to-One",
+  },
+  {
+    quote: "Came back to riding after 10 years away. The refresher course was exactly what I needed — friendly, no-pressure, and genuinely useful.",
+    author: "Helen P.",
+    location: "Eastbourne",
+    course: "Refresher",
+  },
+  {
+    quote: "Brilliant school. Professional, well organised, and the bikes are in great condition. Highly recommend for anyone in Sussex.",
+    author: "David R.",
+    location: "Chichester",
+    course: "CBT",
+  },
+  {
+    quote: "The advanced rider training was excellent. Really challenged me to think differently about how I ride. Already noticed a difference on my commute.",
+    author: "Tom W.",
+    location: "Lewes",
+    course: "Advanced Rider",
+  },
+];
+---
+
+<BaseLayout
+  title="Testimonials — TT Motorcycle School"
+  description="Read reviews and testimonials from TT Motorcycle School students in Sussex. See what our riders have to say about their CBT, full licence, and advanced training."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Student Reviews</span>
+      <h1 class="page-hero__title">What Our Students Say</h1>
+      <p class="page-hero__sub">
+        Don't just take our word for it — here's what riders from across Sussex and the
+        surrounding area have said about training with TT Motorcycle School.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="grid-3 testimonials-grid">
+        {testimonials.map(t => (
+          <div class="testimonial-card">
+            <div class="stars" aria-label="5 stars">★★★★★</div>
+            <p class="testimonial-card__quote">"{t.quote}"</p>
+            <div class="testimonial-card__footer">
+              <span class="testimonial-card__author">— {t.author}, {t.location}</span>
+              <span class="testimonial-card__course">{t.course}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="testimonials-cta">
+        <p class="testimonials-cta__text">
+          See even more reviews on our
+          <a href="/google-reviews/">Google Reviews page</a>.
+        </p>
+        <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .testimonials-grid {
+    margin-bottom: var(--space-12);
+  }
+
+  .testimonial-card {
+    background: var(--color-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    border-left: 4px solid var(--color-accent);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .testimonial-card__quote {
+    font-size: var(--text-base);
+    font-style: italic;
+    line-height: var(--leading-normal);
+    color: var(--color-text-muted);
+    flex: 1;
+    margin-block: var(--space-3);
+  }
+
+  .testimonial-card__footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: var(--space-2);
+    margin-top: var(--space-4);
+    padding-top: var(--space-4);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonial-card__author {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-text);
+  }
+
+  .testimonial-card__course {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-accent);
+    background: rgba(230,51,41,0.08);
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .testimonials-cta {
+    text-align: center;
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+
+  .testimonials-cta__text {
+    font-size: var(--text-base);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-6);
+  }
+
+  .testimonials-cta__text a {
+    color: var(--color-accent);
+    text-decoration: underline;
+    font-weight: 600;
+  }
+</style>

@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+const required = [
+  {
+    item: 'Helmet',
+    detail: 'A full-face or open-face helmet that meets BSI/ECE 22.06 standards. Must fit correctly. A helmet will not be provided — this is mandatory kit.',
+    required: true,
+  },
+  {
+    item: 'Gloves',
+    detail: 'Full-fingered motorcycle gloves or thick leather/textile gloves. Covers your entire hand and wrist.',
+    required: true,
+  },
+  {
+    item: 'Jacket',
+    detail: 'A sturdy, close-fitting jacket. Leather or textile motorcycle jacket preferred. No thin hoodies — you need abrasion resistance.',
+    required: true,
+  },
+  {
+    item: 'Trousers',
+    detail: 'Full-length trousers. Jeans are acceptable as a minimum; motorcycle jeans or leather/textile over-trousers are better.',
+    required: true,
+  },
+  {
+    item: 'Boots',
+    detail: 'Sturdy, ankle-covering footwear. Motorcycle boots are ideal. Trainers are not acceptable.',
+    required: true,
+  },
+];
+
+const recommended = [
+  'Motorcycle-specific riding jacket with CE-rated armour',
+  'Armoured motorcycle trousers or over-trousers',
+  'Waterproof outer layer (British weather is unpredictable)',
+  'Hi-vis vest or jacket (especially for early lessons)',
+  'Neck warmer or balaclava in cold weather',
+];
+---
+
+<BaseLayout
+  title="What to Wear — TT Motorcycle School"
+  description="Find out exactly what to wear for your CBT or motorcycle training at TT Motorcycle School in Sussex. Clothing requirements, recommended kit, and safety guidance."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Preparing for Training</span>
+      <h1 class="page-hero__title">What to Wear</h1>
+      <p class="page-hero__sub">
+        Wearing the right gear is essential for your safety on a motorcycle. Here's exactly
+        what you need to bring to your training with TT Motorcycle School.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-two-col">
+      <div>
+        <div class="prose">
+          <p>
+            <strong>Please do not turn up in shorts, flip-flops, or unsuitable clothing.</strong>
+            For safety and legal reasons, we cannot begin training until you are appropriately dressed.
+            If in doubt, contact us beforehand.
+          </p>
+        </div>
+
+        <h2 class="wear-section-title">Required Kit</h2>
+        <div class="wear-list">
+          {required.map(item => (
+            <div class="wear-item">
+              <div class="wear-item__header">
+                <span class="wear-item__name">{item.item}</span>
+                <span class="wear-item__badge">Required</span>
+              </div>
+              <p class="wear-item__detail">{item.detail}</p>
+            </div>
+          ))}
+        </div>
+
+        <h2 class="wear-section-title">Recommended</h2>
+        <ul class="recommended-list">
+          {recommended.map(r => <li>{r}</li>)}
+        </ul>
+
+        <div class="prose" style="margin-top: var(--space-8);">
+          <h2>What About Helmets?</h2>
+          <p>
+            You must bring your own helmet — we do not provide them. Make sure it carries a
+            BSI or ECE 22.06 approval mark and that it fits snugly. If you don't yet have one,
+            speak to a reputable motorcycle dealer before your course.
+          </p>
+          <h2>Questions?</h2>
+          <p>
+            Not sure if your gear meets the requirements? <a href="/contact/">Contact us</a> before
+            your course and we'll be happy to advise.
+          </p>
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--accent">
+          <h3 class="sidebar__title">Clothing Checklist</h3>
+          <ul class="sidebar__checklist">
+            <li>☑ Helmet (BSI/ECE 22.06)</li>
+            <li>☑ Full-fingered gloves</li>
+            <li>☑ Jacket (leather or textile)</li>
+            <li>☑ Full-length trousers</li>
+            <li>☑ Ankle-covering boots</li>
+          </ul>
+        </div>
+        <div class="sidebar__card sidebar__card--plain" style="margin-top: var(--space-5);">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/cbt/">About CBT</a></li>
+            <li><a href="/new-rider/">New to Riding</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-two-col {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-two-col { grid-template-columns: 1fr 280px; }
+  }
+
+  .wear-section-title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-top: var(--space-10);
+    margin-bottom: var(--space-6);
+  }
+
+  .wear-list {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+  }
+
+  .wear-item {
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+  }
+
+  .wear-item__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: var(--space-2);
+  }
+
+  .wear-item__name {
+    font-weight: 700;
+    font-size: var(--text-base);
+  }
+
+  .wear-item__badge {
+    font-size: var(--text-xs);
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    background: var(--color-accent);
+    color: #fff;
+    padding: 2px 8px;
+    border-radius: 999px;
+  }
+
+  .wear-item__detail {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .recommended-list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    margin-top: var(--space-4);
+  }
+
+  .recommended-list li {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    padding-left: var(--space-5);
+    position: relative;
+  }
+
+  .recommended-list li::before {
+    content: '→';
+    position: absolute;
+    left: 0;
+    color: var(--color-accent);
+    font-weight: 700;
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .sidebar__card--accent {
+    background: var(--color-primary);
+    color: var(--color-white);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__checklist {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    font-size: var(--text-sm);
+    color: #ccc;
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>

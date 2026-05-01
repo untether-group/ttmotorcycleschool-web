@@ -1,0 +1,152 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const resources = [
+  {
+    category: 'Theory Test',
+    items: [
+      { title: 'Official DVSA Theory Test Kit', url: 'https://www.gov.uk/motorcycle-theory-test', desc: 'Book your motorcycle theory test on the official DVSA website.' },
+      { title: 'Highway Code', url: 'https://www.gov.uk/guidance/the-highway-code', desc: 'Read and revise the full Highway Code online — essential for your theory test and beyond.' },
+      { title: 'Official DVSA Theory Test App', url: 'https://www.gov.uk/theory-test/revision-and-practice', desc: 'Revise on the go with official practice hazard perception and multiple-choice questions.' },
+    ],
+  },
+  {
+    category: 'Practical Tests',
+    items: [
+      { title: 'Book Your Module 1 Test', url: 'https://www.gov.uk/book-your-module-1-motorcycle-test', desc: 'Book your Module 1 (off-road manoeuvres) test through DVSA.' },
+      { title: 'Book Your Module 2 Test', url: 'https://www.gov.uk/book-your-module-2-motorcycle-test', desc: 'Book your Module 2 (on-road) test through DVSA.' },
+      { title: 'What to Expect in Module 1', url: 'https://www.gov.uk/motorcycle-practical-test/module-1', desc: 'A full breakdown of what you\'ll be tested on in Module 1.' },
+    ],
+  },
+  {
+    category: 'Licensing & DVLA',
+    items: [
+      { title: 'Apply for a Provisional Licence', url: 'https://www.gov.uk/apply-first-provisional-driving-licence', desc: 'Apply for your first provisional driving or motorcycle licence.' },
+      { title: 'Motorcycle Licence Categories', url: 'https://www.gov.uk/motorcycle-law', desc: 'Full details on A1, A2 and A licence categories and what you can ride.' },
+      { title: 'Check Your Driving Licence', url: 'https://www.gov.uk/view-driving-licence', desc: 'View your current licence details and entitlements online.' },
+    ],
+  },
+  {
+    category: 'Safety & Further Training',
+    items: [
+      { title: 'IAM RoadSmart', url: 'https://www.iamroadsmart.com', desc: 'The UK\'s leading advanced driver and rider organisation. Great for further development after your licence.' },
+      { title: 'RoSPA Advanced Drivers and Riders', url: 'https://www.rospa.com/road-safety/advanced-motorists', desc: 'Take your riding to the next level with a RoSPA advanced assessment.' },
+      { title: 'Bike Safe', url: 'https://bikesafe.co.uk', desc: 'A police-backed initiative offering observed rides and safety advice for all levels.' },
+    ],
+  },
+];
+---
+
+<BaseLayout
+  title="Learning Resources — TT Motorcycle School"
+  description="Useful resources for motorcycle learners and riders. Theory test links, DVSA practical test booking, Highway Code, advanced rider organisations, and more."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Study Materials</span>
+      <h1 class="page-hero__title">Learning Resources</h1>
+      <p class="page-hero__sub">
+        A curated collection of useful links and resources to help you prepare for your
+        theory test, practical tests, and to continue developing as a rider.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      {resources.map(group => (
+        <div class="resource-group">
+          <h2 class="resource-group__title">{group.category}</h2>
+          <div class="resource-cards">
+            {group.items.map(item => (
+              <a href={item.url} target="_blank" rel="noopener noreferrer" class="resource-card">
+                <h3 class="resource-card__title">{item.title}</h3>
+                <p class="resource-card__desc">{item.desc}</p>
+                <span class="resource-card__link">Visit →</span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <div class="resources-cta">
+        <CTAButton href="/contact/" label="Have a Question?" variant="primary" size="md" />
+        &nbsp;&nbsp;
+        <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .resource-group {
+    margin-bottom: var(--space-12);
+  }
+
+  .resource-group__title {
+    font-size: var(--text-2xl);
+    font-weight: 700;
+    margin-bottom: var(--space-6);
+    padding-bottom: var(--space-4);
+    border-bottom: 2px solid var(--color-accent);
+    display: inline-block;
+  }
+
+  .resource-cards {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  @media (min-width: 640px) {
+    .resource-cards { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  @media (min-width: 900px) {
+    .resource-cards { grid-template-columns: repeat(3, 1fr); }
+  }
+
+  .resource-card {
+    display: flex;
+    flex-direction: column;
+    background: var(--color-bg);
+    border-radius: var(--radius-md);
+    padding: var(--space-5);
+    text-decoration: none;
+    color: inherit;
+    transition: box-shadow var(--transition), transform var(--transition);
+    border: 1px solid var(--color-border);
+  }
+
+  .resource-card:hover {
+    box-shadow: var(--shadow-sm);
+    transform: translateY(-2px);
+  }
+
+  .resource-card__title {
+    font-size: var(--text-base);
+    font-weight: 700;
+    color: var(--color-text);
+    margin-bottom: var(--space-2);
+  }
+
+  .resource-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+    flex: 1;
+    margin-bottom: var(--space-4);
+  }
+
+  .resource-card__link {
+    font-size: var(--text-sm);
+    font-weight: 700;
+    color: var(--color-accent);
+  }
+
+  .resources-cta {
+    padding-top: var(--space-8);
+    border-top: 1px solid var(--color-border);
+  }
+</style>

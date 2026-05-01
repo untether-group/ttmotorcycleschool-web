@@ -1,0 +1,24 @@
+# Cloudflare Pages redirect rules
+# Format: source  destination  status_code
+
+# OneToOneTraining — normalise casing variations
+/one-to-one-training/*    /OneToOneTraining/:splat    301
+/one-to-one-training      /OneToOneTraining/          301
+/onetoonetraining         /OneToOneTraining/          301
+
+# Enforce trailing slashes (belt-and-braces for any links without them)
+/new-rider                /new-rider/                 301
+/e-bikes                  /e-bikes/                   301
+/prices                   /prices/                    301
+/cbt                      /cbt/                       301
+/cbtbooking               /cbtbooking/                301
+/google-reviews           /google-reviews/            301
+/terms-and-conditions     /terms-and-conditions/      301
+/bespoke-refresher        /bespoke-refresher/         301
+/learning-resources       /learning-resources/        301
+/advanced-rider           /advanced-rider/            301
+/contact                  /contact/                   301
+/full-licence             /full-licence/              301
+/about                    /about/                     301
+/testimonials             /testimonials/              301
+/what-to-wear             /what-to-wear/              301

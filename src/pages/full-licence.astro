@@ -1,0 +1,198 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import CTAButton from '../components/CTAButton.astro';
+
+const categories = [
+  {
+    name: 'A1 — Light Motorcycle',
+    age: '17+',
+    bikes: 'Up to 125cc, 11kW',
+    desc: 'The A1 licence lets you ride light motorcycles. Achieved through Module 1 and Module 2 tests.',
+  },
+  {
+    name: 'A2 — Medium Motorcycle',
+    age: '19+',
+    bikes: 'Up to 35kW',
+    desc: 'A2 is the most popular full licence for new adult riders. Opens up a wide range of motorcycles.',
+  },
+  {
+    name: 'A — Full Unrestricted',
+    age: '24+ (direct access) or 21+ (progressive access)',
+    bikes: 'Any motorcycle, any power',
+    desc: 'Full, unrestricted access to any motorcycle. The ultimate goal for many riders.',
+  },
+];
+---
+
+<BaseLayout
+  title="Full Licence — TT Motorcycle School"
+  description="Get your full motorcycle licence with TT Motorcycle School in Sussex. A1, A2 and full A category training. Structured, expert-led preparation for your Module 1 and Module 2 tests."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Motorcycle Licences</span>
+      <h1 class="page-hero__title">Full Motorcycle Licence Training</h1>
+      <p class="page-hero__sub">
+        Ready to go beyond your CBT? We offer structured training for the A1, A2 and full A
+        licence categories — preparing you thoroughly for your Module 1 and Module 2 tests.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div>
+        <div class="prose">
+          <h2>Licence Categories</h2>
+          <p>
+            The UK motorcycle licence system has three main categories. The right one for you
+            depends on your age and what you want to ride.
+          </p>
+        </div>
+
+        <div class="licence-cards">
+          {categories.map(cat => (
+            <div class="licence-card">
+              <h3 class="licence-card__title">{cat.name}</h3>
+              <div class="licence-card__meta">
+                <span><strong>Minimum age:</strong> {cat.age}</span>
+                <span><strong>Machines:</strong> {cat.bikes}</span>
+              </div>
+              <p class="licence-card__desc">{cat.desc}</p>
+            </div>
+          ))}
+        </div>
+
+        <div class="prose">
+          <h2>The Test Structure</h2>
+          <p>
+            To get your full licence you need to pass two practical tests — Module 1 (off-road
+            manoeuvres) and Module 2 (on-road riding assessment) — plus the theory test if you
+            haven't already passed it.
+          </p>
+          <h3>Module 1</h3>
+          <p>
+            An off-road test at a DVSA test centre covering slow-speed control, slalom,
+            figure of 8, U-turn, emergency stop, and swerve.
+          </p>
+          <h3>Module 2</h3>
+          <p>
+            An on-road test of approximately 40 minutes, assessed on your riding ability,
+            hazard perception, and following instructions.
+          </p>
+          <h2>How We Prepare You</h2>
+          <p>
+            TT Motorcycle School provides structured lessons covering every element of both tests.
+            We'll tell you honestly when we think you're ready — we won't push you to test before
+            your time.
+          </p>
+        </div>
+
+        <div style="margin-top: var(--space-8);">
+          <CTAButton href="/cbtbooking/" label="Book Training" variant="accent" size="md" />
+        </div>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/cbt/">CBT Information</a></li>
+            <li><a href="/new-rider/">New to Riding</a></li>
+            <li><a href="/prices/">Pricing</a></li>
+            <li><a href="/OneToOneTraining/">One-to-One Training</a></li>
+            <li><a href="/contact/">Contact Us</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: var(--space-10);
+    align-items: start;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid { grid-template-columns: 1fr 280px; }
+  }
+
+  .licence-cards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-5);
+    margin-block: var(--space-8);
+  }
+
+  .licence-card {
+    background: var(--color-bg);
+    border-left: 4px solid var(--color-accent);
+    border-radius: 0 var(--radius-md) var(--radius-md) 0;
+    padding: var(--space-6);
+  }
+
+  .licence-card__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .licence-card__meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-4);
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    margin-bottom: var(--space-3);
+  }
+
+  .licence-card__desc {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__card {
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+    margin-bottom: var(--space-5);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-4);
+  }
+
+  .sidebar__links {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    transition: color var(--transition);
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+
+  .prose a {
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+</style>
