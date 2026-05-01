@@ -1,0 +1,175 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
+---
+
+<BaseLayout
+  title="Young Rider Course — TT Motorcycle School"
+  description="Starting out for the first time? Our Young Rider course is designed for 16+ year olds with no road experience. Theory, hazard perception and off-road scooter training in Sussex."
+>
+  <section class="page-hero">
+    <div class="container">
+      <span class="section__eyebrow">Young Rider Course</span>
+      <h1 class="page-hero__title">Starting Out for the First Time?</h1>
+      <p class="page-hero__sub">
+        A two-hour introduction designed for 16+ year olds with no road
+        experience — theory, hazard perception, and hands-on scooter training in
+        a safe, off-road environment.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container content-grid">
+      <div class="prose">
+        <h2>The Young Rider Course</h2>
+        <p>
+          For 16+ year olds who have no experience of being on the road, we
+          offer a <strong>two-hour lesson</strong>. The first hour is spent at
+          our training school where you will practise your theory test questions
+          and hazard perception training. The second hour is spent in the safety
+          of our secure off-road training area, learning how to control a 50cc
+          automatic scooter.
+        </p>
+        <p>
+          This course is ideal for making sure your son or daughter gets the
+          best possible start before moving on to Compulsory Basic Training
+          (CBT).
+        </p>
+        <p>
+          <strong>Please note:</strong> we only have automatic 50cc mopeds (no manual
+          clutch and gears) for this course.
+        </p>
+
+        <h2>For 17+ Riders: New Rider Course</h2>
+        <p>
+          For riders aged 17 and upwards who have never ridden an automatic or a
+          manual bike before (with clutch &amp; gears), our{" "}
+          <a href="/new-rider/">New Rider course</a> will give you the skills and
+          confidence to move on to your CBT with ease.
+        </p>
+        <p>
+          You will receive personal one-to-one tuition in the safety of our
+          secure off-road training area, covering:
+        </p>
+        <ul>
+          <li>Pulling away and stopping smoothly</li>
+          <li>Changing gears on a manual bike</li>
+          <li>
+            Slow control techniques — including figure-of-eights and U-turns
+          </li>
+        </ul>
+
+        <h2>A Note on Training Duration</h2>
+        <p>
+          All training course lengths are determined by the individual's level
+          of skill and competence. The number of sessions required is advised by
+          our instructors following an assessment of your riding skills. This
+          assessment is carried out when the CBT road ride (Module E) is
+          undertaken.
+        </p>
+
+        <h2>What Comes Next?</h2>
+        <p>
+          After completing the Young Rider course, the natural next step is your <a
+            href="/cbt/">CBT (Compulsory Basic Training)</a
+          > — the legal requirement to ride on UK roads. From there, you can work
+          towards your <a href="/full-licence/">full motorcycle licence</a>.
+        </p>
+      </div>
+
+      <aside class="sidebar">
+        <div class="sidebar__card">
+          <h3 class="sidebar__title">Ready to Book?</h3>
+          <p class="sidebar__body">
+            Young Rider sessions are one-to-one and popular. Secure your spot
+            today.
+          </p>
+          <CTAButton
+            href="/cbtbooking/"
+            label="Book Your Session"
+            variant="accent"
+            size="md"
+          />
+        </div>
+        <div class="sidebar__card sidebar__card--plain">
+          <h3 class="sidebar__title">Useful Links</h3>
+          <ul class="sidebar__links">
+            <li><a href="/new-rider/">New Rider Course (17+)</a></li>
+            <li><a href="/cbt/">About CBT</a></li>
+            <li><a href="/full-licence/">Full Licence Courses</a></li>
+            <li><a href="/what-to-wear/">What to Wear</a></li>
+            <li><a href="/prices/">View Prices</a></li>
+            <li><a href="/contact/">Ask a Question</a></li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .content-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+
+  @media (min-width: 900px) {
+    .content-grid {
+      grid-template-columns: 1fr 300px;
+      align-items: start;
+    }
+  }
+
+  .sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .sidebar__card {
+    background: var(--color-primary);
+    color: var(--color-white);
+    border-radius: var(--radius-lg);
+    padding: var(--space-6);
+  }
+
+  .sidebar__card--plain {
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  .sidebar__title {
+    font-size: var(--text-lg);
+    font-weight: 700;
+    margin-bottom: var(--space-3);
+  }
+
+  .sidebar__body {
+    font-size: var(--text-sm);
+    color: #ccc;
+    margin-bottom: var(--space-4);
+    line-height: var(--leading-normal);
+  }
+
+  .sidebar__card--plain .sidebar__body {
+    color: var(--color-text-muted);
+  }
+
+  .sidebar__links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+  }
+
+  .sidebar__links a {
+    font-size: var(--text-sm);
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: underline;
+  }
+
+  .sidebar__links a:hover {
+    color: var(--color-accent-hover);
+  }
+</style>
