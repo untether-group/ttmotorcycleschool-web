@@ -1,12 +1,12 @@
 ---
 const navLinks = [
-  { label: 'Home',         href: '/' },
-  { label: 'New Rider',    href: '/new-rider/' },
-  { label: 'CBT',          href: '/cbt/' },
-  { label: 'Full Licence', href: '/full-licence/' },
-  { label: 'Prices',       href: '/prices/' },
-  { label: 'About',        href: '/about/' },
-  { label: 'Contact',      href: '/contact/' },
+  { label: "Home", href: "/" },
+  { label: "New Rider", href: "/new-rider/" },
+  { label: "CBT", href: "/cbt/" },
+  { label: "Full Licence", href: "/full-licence/" },
+  { label: "Prices", href: "/prices/" },
+  { label: "About", href: "/about/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
 const currentPath = Astro.url.pathname;
@@ -22,17 +22,22 @@ const currentPath = Astro.url.pathname;
     <!-- Desktop nav -->
     <nav class="header__nav" aria-label="Primary navigation">
       <ul class="header__nav-list">
-        {navLinks.map(link => (
-          <li>
-            <a
-              href={link.href}
-              class:list={['header__nav-link', { 'header__nav-link--active': currentPath === link.href }]}
-              aria-current={currentPath === link.href ? 'page' : undefined}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "header__nav-link",
+                  { "header__nav-link--active": currentPath === link.href },
+                ]}
+                aria-current={currentPath === link.href ? "page" : undefined}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </nav>
 
@@ -47,9 +52,11 @@ const currentPath = Astro.url.pathname;
       aria-controls="mobile-nav"
       id="hamburger-btn"
     >
-      <span></span>
-      <span></span>
-      <span></span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#ffffff" stroke-width="2.5" stroke-linecap="round" aria-hidden="true">
+        <line x1="3" y1="6" x2="21" y2="6" />
+        <line x1="3" y1="12" x2="21" y2="12" />
+        <line x1="3" y1="18" x2="21" y2="18" />
+      </svg>
     </button>
   </div>
 
@@ -57,18 +64,27 @@ const currentPath = Astro.url.pathname;
   <div class="header__mobile-nav" id="mobile-nav" aria-hidden="true">
     <nav aria-label="Mobile navigation">
       <ul class="header__mobile-list">
-        {navLinks.map(link => (
-          <li>
-            <a
-              href={link.href}
-              class:list={['header__mobile-link', { 'header__mobile-link--active': currentPath === link.href }]}
-            >
-              {link.label}
-            </a>
-          </li>
-        ))}
+        {
+          navLinks.map((link) => (
+            <li>
+              <a
+                href={link.href}
+                class:list={[
+                  "header__mobile-link",
+                  { "header__mobile-link--active": currentPath === link.href },
+                ]}
+              >
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
         <li>
-          <a href="/cbtbooking/" class="btn btn--accent" style="display:block;text-align:center;margin-top:1rem;">
+          <a
+            href="/cbtbooking/"
+            class="btn btn--accent"
+            style="display:block;text-align:center;margin-top:1rem;"
+          >
             Book Now
           </a>
         </li>
@@ -78,24 +94,24 @@ const currentPath = Astro.url.pathname;
 </header>
 
 <script>
-  const btn = document.getElementById('hamburger-btn');
-  const nav = document.getElementById('mobile-nav');
+  const btn = document.getElementById("hamburger-btn");
+  const nav = document.getElementById("mobile-nav");
 
-  btn?.addEventListener('click', () => {
-    const isOpen = btn.getAttribute('aria-expanded') === 'true';
-    btn.setAttribute('aria-expanded', String(!isOpen));
-    nav?.setAttribute('aria-hidden', String(isOpen));
-    btn.classList.toggle('is-open', !isOpen);
-    nav?.classList.toggle('is-open', !isOpen);
+  btn?.addEventListener("click", () => {
+    const isOpen = btn.getAttribute("aria-expanded") === "true";
+    btn.setAttribute("aria-expanded", String(!isOpen));
+    nav?.setAttribute("aria-hidden", String(isOpen));
+    btn.classList.toggle("is-open", !isOpen);
+    nav?.classList.toggle("is-open", !isOpen);
   });
 
   // Close on nav link click (mobile)
-  nav?.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', () => {
-      btn?.setAttribute('aria-expanded', 'false');
-      nav.setAttribute('aria-hidden', 'true');
-      btn?.classList.remove('is-open');
-      nav.classList.remove('is-open');
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", () => {
+      btn?.setAttribute("aria-expanded", "false");
+      nav.setAttribute("aria-hidden", "true");
+      btn?.classList.remove("is-open");
+      nav.classList.remove("is-open");
     });
   });
 </script>
@@ -128,9 +144,15 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (min-width: 900px) {
-    .header__nav { display: block; }
-    .header__cta { display: inline-flex; }
-    .header__hamburger { display: none; }
+    .header__nav {
+      display: block;
+    }
+    .header__cta {
+      display: inline-flex;
+    }
+    .header__hamburger {
+      display: none;
+    }
   }
 
   .header__nav-list {
@@ -146,14 +168,16 @@ const currentPath = Astro.url.pathname;
     font-weight: 600;
     color: #ccc;
     border-radius: var(--radius-sm);
-    transition: color var(--transition), background var(--transition);
+    transition:
+      color var(--transition),
+      background var(--transition);
     white-space: nowrap;
   }
 
   .header__nav-link:hover,
   .header__nav-link--active {
     color: var(--color-white);
-    background-color: rgba(255,255,255,0.08);
+    background-color: rgba(255, 255, 255, 0.08);
   }
 
   /* CTA button */
@@ -170,7 +194,10 @@ const currentPath = Astro.url.pathname;
     border-radius: var(--radius-sm);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: background-color var(--transition), color var(--transition), border-color var(--transition);
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      border-color var(--transition);
     white-space: nowrap;
     text-decoration: none;
   }
@@ -192,7 +219,10 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (min-width: 900px) {
-    .header__cta { display: inline-flex; margin-left: var(--space-4); }
+    .header__cta {
+      display: inline-flex;
+      margin-left: var(--space-4);
+    }
   }
 
   /* Hamburger */
@@ -200,35 +230,32 @@ const currentPath = Astro.url.pathname;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 5px;
+    gap: 6px;
     width: 36px;
     height: 36px;
     background: transparent;
     border: none;
+    outline: none;
     cursor: pointer;
     margin-left: auto;
     padding: 4px;
+    z-index: 120;
   }
 
-  .header__hamburger span {
+  .header__hamburger svg {
     display: block;
-    height: 2px;
-    width: 100%;
-    background-color: var(--color-white);
-    border-radius: 2px;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    transform-origin: center;
+    transition: opacity 0.2s ease;
   }
 
-  .header__hamburger.is-open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
-  .header__hamburger.is-open span:nth-child(2) { opacity: 0; }
-  .header__hamburger.is-open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+  .header__hamburger.is-open svg {
+    opacity: 0.7;
+  }
 
   /* Mobile nav drawer */
   .header__mobile-nav {
     display: none;
     background-color: var(--color-primary-soft);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
   }
 
   .header__mobile-nav.is-open {
@@ -236,8 +263,12 @@ const currentPath = Astro.url.pathname;
   }
 
   @media (min-width: 900px) {
-    .header__mobile-nav { display: none !important; }
-    .header__hamburger { display: none; }
+    .header__mobile-nav {
+      display: none !important;
+    }
+    .header__hamburger {
+      display: none;
+    }
   }
 
   .header__mobile-list {
@@ -250,7 +281,7 @@ const currentPath = Astro.url.pathname;
     font-size: var(--text-base);
     font-weight: 600;
     color: #ccc;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
     transition: color var(--transition);
   }
 

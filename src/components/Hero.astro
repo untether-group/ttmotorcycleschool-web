@@ -1,10 +1,15 @@
 ---
-import CTAButton from './CTAButton.astro';
+import CTAButton from "./CTAButton.astro";
 ---
 
 <section class="hero" aria-label="Welcome to TT Motorcycle School">
   <div class="hero__bg-image"></div>
   <div class="hero__bg-overlay"></div>
+  <img
+    src="/images/hero-image.png"
+    alt="Motorcycle training"
+    class="hero__img-mobile"
+  />
   <div class="container hero__content hero__content-bg">
     <span class="hero__eyebrow">CBT · Full Licence · Advanced Riding</span>
     <h1 class="hero__title">
@@ -12,12 +17,23 @@ import CTAButton from './CTAButton.astro';
       <span class="hero__title-accent">Ride with Confidence.</span>
     </h1>
     <p class="hero__sub">
-      Professional motorcycle training in Sussex. Whether you're a complete beginner
-      or returning to riding, TT Motorcycle School has a course for you.
+      Professional motorcycle training in Sussex. Whether you're a complete
+      beginner or returning to riding, TT Motorcycle School has a course for
+      you.
     </p>
     <div class="hero__actions">
-      <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="lg" />
-      <CTAButton href="/new-rider/" label="New to riding?" variant="outline" size="lg" />
+      <CTAButton
+        href="/cbtbooking/"
+        label="Book Your Training"
+        variant="accent"
+        size="lg"
+      />
+      <CTAButton
+        href="/new-rider/"
+        label="New to riding?"
+        variant="outline"
+        size="lg"
+      />
     </div>
     <div class="hero__trust">
       <div class="hero__trust-item">
@@ -51,7 +67,11 @@ import CTAButton from './CTAButton.astro';
   .hero__bg-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(230,51,41,0.12) 0%, transparent 60%);
+    background: linear-gradient(
+      135deg,
+      rgba(230, 51, 41, 0.12) 0%,
+      transparent 60%
+    );
     pointer-events: none;
   }
 
@@ -79,7 +99,9 @@ import CTAButton from './CTAButton.astro';
   }
 
   @media (min-width: 768px) {
-    .hero__title { font-size: var(--text-6xl); }
+    .hero__title {
+      font-size: var(--text-6xl);
+    }
   }
 
   .hero__title-accent {
@@ -132,26 +154,44 @@ import CTAButton from './CTAButton.astro';
   .hero__trust-divider {
     width: 1px;
     height: 32px;
-    background-color: rgba(255,255,255,0.15);
+    background-color: rgba(255, 255, 255, 0.15);
   }
   .hero__content-bg {
     background: rgba(17, 17, 17, 0.82);
     border-radius: var(--radius-lg);
-    box-shadow: 0 4px 32px 0 rgba(0,0,0,0.18);
+    box-shadow: 0 4px 32px 0 rgba(0, 0, 0, 0.18);
     padding: var(--space-8) var(--space-6);
     max-width: 700px;
     margin-inline: auto;
     backdrop-filter: blur(2px);
   }
   .hero__bg-image {
-    position: absolute;
-    inset: 0;
-    z-index: 0;
-    background: url('/images/hero-image.png') center center/cover no-repeat;
+    display: none;
+  }
+  .hero__img-mobile {
+    display: block;
     width: 100%;
-    height: 100%;
-    opacity: 0.55;
-    pointer-events: none;
-    transition: opacity 0.3s;
+    height: auto;
+    max-height: 220px;
+    object-fit: cover;
+    margin-bottom: var(--space-6);
+    border-radius: var(--radius-lg);
+  }
+  @media (min-width: 768px) {
+    .hero__bg-image {
+      display: block;
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      background: url("/images/hero-image.png") center center/cover no-repeat;
+      width: 100%;
+      height: 100%;
+      opacity: 0.55;
+      pointer-events: none;
+      transition: opacity 0.3s;
+    }
+    .hero__img-mobile {
+      display: none;
+    }
   }
 </style>
