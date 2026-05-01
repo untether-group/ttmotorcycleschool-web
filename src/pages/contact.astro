@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -12,8 +12,8 @@ import CTAButton from '../components/CTAButton.astro';
       <span class="section__eyebrow">Get in Touch</span>
       <h1 class="page-hero__title">Contact Us</h1>
       <p class="page-hero__sub">
-        Have a question about a course, not sure which training is right for you, or just
-        want to say hello? We'd love to hear from you.
+        Have a question about a course, not sure which training is right for
+        you, or just want to say hello? We'd love to hear from you.
       </p>
     </div>
   </section>
@@ -23,10 +23,18 @@ import CTAButton from '../components/CTAButton.astro';
       <!-- Contact details -->
       <div>
         <div class="contact-card">
-          <span class="contact-card__icon" aria-hidden="true">📍</span>
+          <span class="contact-card__icon" aria-hidden="true">�</span>
           <div>
-            <h3 class="contact-card__title">Location</h3>
-            <p class="contact-card__body">Sussex, UK<br />Serving Sussex and surrounding counties</p>
+            <h3 class="contact-card__title">Phone</h3>
+            <p class="contact-card__body">
+              Office: <a href="tel:01273041925">01273 041925</a><br />
+              <span class="contact-card__note"
+                >09:00 – 20:00, Monday – Saturday</span
+              >
+            </p>
+            <p class="contact-card__body" style="margin-top: var(--space-2);">
+              Mobile: <a href="tel:07592163860">07592 163860</a>
+            </p>
           </div>
         </div>
 
@@ -35,34 +43,47 @@ import CTAButton from '../components/CTAButton.astro';
           <div>
             <h3 class="contact-card__title">Email</h3>
             <p class="contact-card__body">
-              <a href="mailto:info@ttmotorcycleschool.com">info@ttmotorcycleschool.com</a>
+              <a href="mailto:info@ttmotorcycleschool.com"
+                >info@ttmotorcycleschool.com</a
+              >
             </p>
           </div>
         </div>
 
         <div class="contact-card">
-          <span class="contact-card__icon" aria-hidden="true">📞</span>
+          <span class="contact-card__icon" aria-hidden="true">📍</span>
           <div>
-            <h3 class="contact-card__title">Phone</h3>
+            <h3 class="contact-card__title">Office Address</h3>
             <p class="contact-card__body">
-              <a href="tel:+441234567890">Please see website for current number</a>
+              TT Motorcycle School<br />
+              Pod 3, Gatehouse Hub<br />
+              Neaves Park, Goddard Green<br />
+              Hassocks, West Sussex<br />
+              BN6 9ZN
             </p>
           </div>
         </div>
 
         <div class="contact-card">
-          <span class="contact-card__icon" aria-hidden="true">🕐</span>
+          <span class="contact-card__icon" aria-hidden="true">🏍️</span>
           <div>
-            <h3 class="contact-card__title">Hours</h3>
+            <h3 class="contact-card__title">CBT Training Site</h3>
             <p class="contact-card__body">
-              Monday – Saturday: 8:00am – 6:00pm<br />
-              Sunday: by arrangement
+              Stanley Deason Leisure Centre<br />
+              Wilson Avenue<br />
+              Brighton<br />
+              BN2 5PB
             </p>
           </div>
         </div>
 
         <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book Online Now" variant="accent" size="md" />
+          <CTAButton
+            href="/cbtbooking/"
+            label="Book Online Now"
+            variant="accent"
+            size="md"
+          />
         </div>
       </div>
 
@@ -71,13 +92,22 @@ import CTAButton from '../components/CTAButton.astro';
         <div class="info-panel">
           <h3 class="info-panel__title">Looking to Book?</h3>
           <p class="info-panel__body">
-            The quickest way to secure your place is to book online through our scheduling system.
-            Available 24/7 — choose a date and time that suits you.
+            The quickest way to secure your place is to book online through our
+            scheduling system. Available 24/7 — choose a date and time that
+            suits you.
           </p>
-          <CTAButton href="/cbtbooking/" label="Go to Booking" variant="accent" size="sm" />
+          <CTAButton
+            href="/cbtbooking/"
+            label="Go to Booking"
+            variant="accent"
+            size="sm"
+          />
         </div>
 
-        <div class="info-panel info-panel--plain" style="margin-top: var(--space-5);">
+        <div
+          class="info-panel info-panel--plain"
+          style="margin-top: var(--space-5);"
+        >
           <h3 class="info-panel__title">Useful Links</h3>
           <ul class="info-panel__links">
             <li><a href="/cbt/">About CBT</a></li>
@@ -100,7 +130,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .contact-grid { grid-template-columns: 1fr 300px; }
+    .contact-grid {
+      grid-template-columns: 1fr 300px;
+    }
   }
 
   .contact-card {
@@ -139,6 +171,11 @@ import CTAButton from '../components/CTAButton.astro';
   .contact-card__body a {
     color: var(--color-accent);
     text-decoration: underline;
+  }
+
+  .contact-card__note {
+    font-size: var(--text-sm);
+    color: var(--color-text-muted);
   }
 
   .info-panel {

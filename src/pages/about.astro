@@ -1,19 +1,21 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
   title="About — TT Motorcycle School"
-  description="Learn about TT Motorcycle School — professional DVSA-approved motorcycle training in Sussex and surrounding counties. Meet the team behind the school."
+  description="With over 22 years of expertise, TT Motorcycle School is a trusted, DVSA-approved training centre in Sussex offering CBT, A1, A2 and Direct Access courses with quality personal tuition."
 >
   <section class="page-hero">
     <div class="container">
       <span class="section__eyebrow">Who We Are</span>
-      <h1 class="page-hero__title">About TT Motorcycle School</h1>
+      <h1 class="page-hero__title">
+        Trusted, Expert Motorcycle Training in Sussex
+      </h1>
       <p class="page-hero__sub">
-        Professional, friendly, and passionate about motorcycling. Here's a little about
-        who we are and what makes us different.
+        Over 22 years of experience. DVSA-approved. Small class sizes. The same
+        instructor from your first lesson to your test day.
       </p>
     </div>
   </section>
@@ -21,44 +23,80 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="section">
     <div class="container content-grid">
       <div class="prose">
-        <h2>Our Story</h2>
+        <h2>Welcome to TT Motorcycle School</h2>
         <p>
-          TT Motorcycle School was founded with a simple mission: to make professional motorcycle
-          training accessible, enjoyable, and genuinely useful for riders across Sussex and the
-          surrounding counties.
-        </p>
-        <p>
-          We know that taking the step to learn to ride — or returning to it — can feel
-          intimidating. That's why we've built a school that puts you at ease from the very
-          first contact, with experienced instructors who care about your progress as much as you do.
+          With over 22 years of industry expertise — including directing the <em
+            >Get On</em
+          > feature at Motorcycle Live (Birmingham NEC) — TT Motorcycle School is
+          a premier, long-established training centre. We specialise in comprehensive
+          motorcycle and scooter training, offering CBT, A1, A2, and Direct Access
+          Scheme (DAS) courses designed to help you confidently take to the road.
         </p>
 
-        <h2>Our Instructors</h2>
+        <h2>Our Locations</h2>
         <p>
-          Every instructor at TT Motorcycle School is fully DVSA-approved and brings years of
-          real-world riding experience to every lesson. We believe in honest, patient teaching
-          — we'll always tell you where you're doing well, and where you can improve.
+          Our administrative headquarters is located in <strong>Hassocks</strong
+          >, while our dedicated CBT training pad is situated in <strong
+            >Brighton</strong
+          >. Both locations offer easy access via car or public transport, with
+          free allocated parking for students.
         </p>
 
-        <h2>Where We Operate</h2>
+        <h2>DVSA-Approved, Quality Personal Tuition</h2>
         <p>
-          We're based in Sussex and operate across the surrounding counties. Get in touch if
-          you'd like to know more about our exact training locations and routes.
+          Led by our founder, Alan, all tuition is delivered by a carefully
+          selected team of RoSPA and DVSA-approved motorcycle instructors. We
+          pride ourselves on providing Quality Personal Tuition — a standard
+          often lost at larger, high-volume schools.
+        </p>
+        <p>
+          Our commitment to safety, thorough instruction, and skill development
+          has earned us a highly respected reputation with examiners at local
+          DVSA test centres.
         </p>
 
-        <h2>Our Approach</h2>
+        <h2>The TT Motorcycle School Difference</h2>
         <ul>
-          <li>Small groups and one-to-one options for maximum personalisation</li>
-          <li>Training motorcycles provided for all CBT and licence courses</li>
-          <li>Flexible booking to fit around your schedule</li>
-          <li>Honest, constructive feedback every session</li>
-          <li>A culture of safety without making riding feel scary</li>
+          <li>
+            <strong>Consistent Guidance:</strong> You will train with the same dedicated
+            instructor from your first lesson straight through to your test day.
+          </li>
+          <li>
+            <strong>Small Class Sizes:</strong> We guarantee a maximum student-to-instructor
+            ratio of 2:1, ensuring your learning is never diluted and your safety
+            remains our top priority.
+          </li>
+          <li>
+            <strong>Real-World Route Training:</strong> All road and Module 2 tuition
+            takes place on the roads in and around Sussex, using reliable radio systems
+            for constant communication. We train directly on the test routes near
+            the Burgess Hill and Eastbourne multi-purpose test centres.
+          </li>
+          <li>
+            <strong>Comprehensive Support:</strong> Our dedicated office team is always
+            available via phone, email, or in person to provide professional, honest,
+            and knowledgeable advice.
+          </li>
         </ul>
+        <p>
+          At TT Motorcycle School, we combine hard work, industry expertise, and
+          a genuine commitment to helping you achieve your riding goals.
+        </p>
 
         <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+          <CTAButton
+            href="/cbtbooking/"
+            label="Book Your Training"
+            variant="accent"
+            size="md"
+          />
           &nbsp;&nbsp;
-          <CTAButton href="/contact/" label="Get in Touch" variant="primary" size="md" />
+          <CTAButton
+            href="/contact/"
+            label="Get in Touch"
+            variant="primary"
+            size="md"
+          />
         </div>
       </div>
 
@@ -66,10 +104,19 @@ import CTAButton from '../components/CTAButton.astro';
         <div class="sidebar__card sidebar__card--plain">
           <h3 class="sidebar__title">Quick Facts</h3>
           <ul class="sidebar__info-list">
-            <li><strong>Location:</strong> Sussex, UK</li>
-            <li><strong>Approved by:</strong> DVSA</li>
-            <li><strong>Courses:</strong> CBT, Full Licence, Advanced, One-to-One</li>
+            <li><strong>Experience:</strong> 22+ years in the industry</li>
+            <li>
+              <strong>Locations:</strong> Hassocks (admin) &amp; Brighton (training)
+            </li>
+            <li><strong>Approved by:</strong> DVSA &amp; RoSPA</li>
+            <li><strong>Courses:</strong> CBT, A1, A2, DAS, Refresher</li>
+            <li>
+              <strong>Class size:</strong> Maximum 2:1 student/instructor ratio
+            </li>
             <li><strong>Bikes provided:</strong> Yes</li>
+            <li>
+              <strong>Parking:</strong> Free allocated parking at both sites
+            </li>
           </ul>
         </div>
       </aside>
@@ -86,7 +133,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 280px; }
+    .content-grid {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .sidebar__card {

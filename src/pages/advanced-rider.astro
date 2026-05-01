@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -10,10 +10,11 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="page-hero">
     <div class="container">
       <span class="section__eyebrow">Advanced Riding</span>
-      <h1 class="page-hero__title">Advanced Rider Training</h1>
+      <h1 class="page-hero__title">Enhanced Rider Scheme</h1>
       <p class="page-hero__sub">
-        Already licensed? Take your riding to the next level with advanced coaching aligned
-        to IAM and RoSPA standards. Ride smarter, safer, and with greater confidence.
+        Take your riding to the next level with the DVSA Enhanced Rider Scheme —
+        gain a respected certificate, ride with greater confidence, and unlock
+        insurance discounts with up to 30 providers.
       </p>
     </div>
   </section>
@@ -21,39 +22,52 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="section">
     <div class="container content-grid">
       <div class="prose">
-        <h2>Who Is This For?</h2>
+        <h2>Enhanced Rider Scheme (ERS)</h2>
         <p>
-          Advanced rider training is ideal for licensed riders who want to sharpen their skills,
-          prepare for an IAM or RoSPA assessment, or simply become a better, safer road rider.
-          No matter how experienced you are, there is always more to learn.
+          For all category A and A2 riders who wish to take it to the next step
+          and gain the much respected Enhanced Rider Scheme (ERS) certificate —
+          we can fulfil this dream.
+        </p>
+        <p>
+          Gaining the ERS certificate will not only make you a more skilful and
+          confident rider but you may benefit from insurance discounts from
+          almost 30 different insurance companies, which include some of the
+          largest names in Motorcycle Insurance — such as Carole Nash and
+          Devitts.
         </p>
 
-        <h2>What We Cover</h2>
-        <ul>
-          <li>Riding plan and systematic approach (Roadcraft)</li>
-          <li>Hazard perception and anticipation</li>
-          <li>Cornering technique and lines</li>
-          <li>Braking, acceleration, and throttle control</li>
-          <li>Positioning and lane discipline</li>
-          <li>Commentary riding</li>
-          <li>Preparation for IAM and RoSPA assessments</li>
-        </ul>
-
-        <h2>The Benefits</h2>
+        <h2>Our ERS Training</h2>
         <p>
-          Advanced trained riders are statistically far less likely to be involved in a collision.
-          Training also often leads to reduced motorcycle insurance premiums once you hold an
-          advanced certificate.
+          Our ERS training is carried out by our DVSA Approved Post-Test
+          Motorcycle Trainer. Courses are for a minimum of one day at <strong
+            >£200 per day</strong
+          >. If you book with a friend the total fee is <strong>£320</strong> — a
+          saving of £80 between you and far less than the daily training rate! So
+          grab a motorcycling buddy and <a href="/contact/">contact us</a>!
         </p>
 
-        <h2>Our Approach</h2>
+        <h2>What You'll Receive</h2>
         <p>
-          Sessions are conducted on your own motorcycle, on real roads, with structured
-          feedback from your instructor. We tailor every session to your current level and goals.
+          Once you've completed your training you will receive a report and a
+          <strong
+            >'DVSA Certificate of Competence – Enhanced Rider Bonus'</strong
+          >, which then qualifies you for the insurance discount.
+        </p>
+
+        <h2>Ready to Book?</h2>
+        <p>
+          If you wish to know more or indeed book a course please
+          <a href="/contact/">contact us</a> so we can talk you through the process
+          and discuss dates.
         </p>
 
         <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book Advanced Training" variant="accent" size="md" />
+          <CTAButton
+            href="/contact/"
+            label="Get in Touch"
+            variant="accent"
+            size="md"
+          />
         </div>
       </div>
 
@@ -81,7 +95,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 280px; }
+    .content-grid {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .sidebar__card {
