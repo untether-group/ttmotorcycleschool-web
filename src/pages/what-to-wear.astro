@@ -1,40 +1,43 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
 
 const required = [
   {
-    item: 'Helmet',
-    detail: 'A full-face or open-face helmet that meets BSI/ECE 22.06 standards. Must fit correctly. A helmet will not be provided — this is mandatory kit.',
+    item: "Helmet",
+    detail:
+      "Must meet British safety standards. Accepted standards: BS 6658:1985 with BSI Kitemark; UNECE Regulation 22.05 or 22.06; or an EEA equivalent offering at least the same protection and carrying an equivalent mark. If you have your own, bring it — otherwise one will be provided.",
     required: true,
   },
   {
-    item: 'Gloves',
-    detail: 'Full-fingered motorcycle gloves or thick leather/textile gloves. Covers your entire hand and wrist.',
+    item: "Gloves",
+    detail:
+      "Must be motorbike appropriate. Provided if you do not have your own.",
     required: true,
   },
   {
-    item: 'Jacket',
-    detail: 'A sturdy, close-fitting jacket. Leather or textile motorcycle jacket preferred. No thin hoodies — you need abrasion resistance.',
+    item: "Jacket",
+    detail:
+      "Must be motorbike appropriate. Provided if you do not have your own.",
     required: true,
   },
   {
-    item: 'Trousers',
-    detail: 'Full-length trousers. Jeans are acceptable as a minimum; motorcycle jeans or leather/textile over-trousers are better.',
+    item: "Trousers",
+    detail:
+      "Minimum of thick jeans with no rips. Motorcycle jeans or leather/textile over-trousers are better. Waterproof trousers provided if needed.",
     required: true,
   },
   {
-    item: 'Boots',
-    detail: 'Sturdy, ankle-covering footwear. Motorcycle boots are ideal. Trainers are not acceptable.',
+    item: "Boots",
+    detail:
+      "Motorcycle boots or sturdy ankle-covering boots (e.g. DMs or hiking boots). No steel toe-cap boots, trainers, canvas shoes, or high heels.",
     required: true,
   },
-];
-
-const recommended = [
-  'Motorcycle-specific riding jacket with CE-rated armour',
-  'Armoured motorcycle trousers or over-trousers',
-  'Waterproof outer layer (British weather is unpredictable)',
-  'Hi-vis vest or jacket (especially for early lessons)',
-  'Neck warmer or balaclava in cold weather',
+  {
+    item: "Hi-Vis Vest",
+    detail:
+      "Provided as part of the course. You are welcome to bring your own.",
+    required: true,
+  },
 ];
 ---
 
@@ -47,8 +50,9 @@ const recommended = [
       <span class="section__eyebrow">Preparing for Training</span>
       <h1 class="page-hero__title">What to Wear</h1>
       <p class="page-hero__sub">
-        Wearing the right gear is essential for your safety on a motorcycle. Here's exactly
-        what you need to bring to your training with TT Motorcycle School.
+        Wearing the right gear is essential for your safety on a motorcycle.
+        Here's exactly what you need to bring to your training with TT
+        Motorcycle School.
       </p>
     </div>
   </section>
@@ -58,41 +62,45 @@ const recommended = [
       <div>
         <div class="prose">
           <p>
-            <strong>Please do not turn up in shorts, flip-flops, or unsuitable clothing.</strong>
-            For safety and legal reasons, we cannot begin training until you are appropriately dressed.
-            If in doubt, contact us beforehand.
+            When considering booking any training course with TT Motorcycle
+            School, you will need to adhere to our clothing requirements. <strong
+              >Anyone who arrives in less than the minimum required clothing
+              will unfortunately be turned away without a refund.</strong
+            >
+            Your safety is paramount to us, which is why these requirements must be
+            met.
+          </p>
+          <p>
+            The following equipment and safety clothing is <strong
+              >included in the price</strong
+            >
+            of every course: helmet, gloves, jacket, hi-vis vest, and waterproof trousers
+            (if needed). If you have your own, feel free to bring it — but it must
+            meet the requirements below.
           </p>
         </div>
 
         <h2 class="wear-section-title">Required Kit</h2>
         <div class="wear-list">
-          {required.map(item => (
-            <div class="wear-item">
-              <div class="wear-item__header">
-                <span class="wear-item__name">{item.item}</span>
-                <span class="wear-item__badge">Required</span>
+          {
+            required.map((item) => (
+              <div class="wear-item">
+                <div class="wear-item__header">
+                  <span class="wear-item__name">{item.item}</span>
+                  <span class="wear-item__badge">Required</span>
+                </div>
+                <p class="wear-item__detail">{item.detail}</p>
               </div>
-              <p class="wear-item__detail">{item.detail}</p>
-            </div>
-          ))}
+            ))
+          }
         </div>
 
-        <h2 class="wear-section-title">Recommended</h2>
-        <ul class="recommended-list">
-          {recommended.map(r => <li>{r}</li>)}
-        </ul>
-
         <div class="prose" style="margin-top: var(--space-8);">
-          <h2>What About Helmets?</h2>
-          <p>
-            You must bring your own helmet — we do not provide them. Make sure it carries a
-            BSI or ECE 22.06 approval mark and that it fits snugly. If you don't yet have one,
-            speak to a reputable motorcycle dealer before your course.
-          </p>
           <h2>Questions?</h2>
           <p>
-            Not sure if your gear meets the requirements? <a href="/contact/">Contact us</a> before
-            your course and we'll be happy to advise.
+            Not sure if your gear meets the requirements? <a href="/contact/"
+              >Contact us</a
+            > before your course and we'll be happy to advise.
           </p>
         </div>
       </div>
@@ -101,14 +109,17 @@ const recommended = [
         <div class="sidebar__card sidebar__card--accent">
           <h3 class="sidebar__title">Clothing Checklist</h3>
           <ul class="sidebar__checklist">
-            <li>☑ Helmet (BSI/ECE 22.06)</li>
-            <li>☑ Full-fingered gloves</li>
-            <li>☑ Jacket (leather or textile)</li>
-            <li>☑ Full-length trousers</li>
-            <li>☑ Ankle-covering boots</li>
+            <li>☑ Helmet (BS 6658:1985 / UNECE 22.05/06)</li>
+            <li>☑ Motorbike-appropriate gloves</li>
+            <li>☑ Motorbike-appropriate jacket</li>
+            <li>☑ Thick jeans (no rips) or better</li>
+            <li>☑ Ankle-covering boots (no steel toe caps)</li>
           </ul>
         </div>
-        <div class="sidebar__card sidebar__card--plain" style="margin-top: var(--space-5);">
+        <div
+          class="sidebar__card sidebar__card--plain"
+          style="margin-top: var(--space-5);"
+        >
           <h3 class="sidebar__title">Useful Links</h3>
           <ul class="sidebar__links">
             <li><a href="/cbt/">About CBT</a></li>
@@ -130,7 +141,9 @@ const recommended = [
   }
 
   @media (min-width: 900px) {
-    .content-two-col { grid-template-columns: 1fr 280px; }
+    .content-two-col {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .wear-section-title {
@@ -197,7 +210,7 @@ const recommended = [
   }
 
   .recommended-list li::before {
-    content: '→';
+    content: "→";
     position: absolute;
     left: 0;
     color: var(--color-accent);
