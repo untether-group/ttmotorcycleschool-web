@@ -1,43 +1,43 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 
 const testimonials = [
   {
-    quote: "Passed my CBT first time. The instructor was calm, patient, and explained everything really clearly. Would recommend TT to anyone.",
-    author: "Jamie L.",
-    location: "Brighton",
-    course: "CBT",
-  },
-  {
-    quote: "I went from complete beginner to full A2 licence in four months. The structured approach and honest feedback made all the difference.",
-    author: "Sarah K.",
-    location: "Worthing",
+    quote:
+      "Alan is the best instructor out there. Before doing my week's training I'd only ridden my 125cc occasionally due to having a car. I was very nervous about riding a bigger engined bike, but Alan is extremely patient, knowledgeable and wants you to pass.",
+    author: "Courtney S.",
     course: "Full Licence",
   },
   {
-    quote: "Outstanding one-to-one sessions. My confidence has improved massively — I actually enjoy riding now instead of feeling nervous.",
-    author: "Mark T.",
-    location: "Horsham",
-    course: "One-to-One",
+    quote:
+      "Al was a wonderful teacher, felt like a comfortable rider by the end of everything. Makes you feel confident. Could not recommend TT enough! Worth the trip down from London.",
+    author: "Blair H.",
+    course: "Full Licence",
   },
   {
-    quote: "Came back to riding after 10 years away. The refresher course was exactly what I needed — friendly, no-pressure, and genuinely useful.",
-    author: "Helen P.",
-    location: "Eastbourne",
-    course: "Refresher",
+    quote:
+      "Really enjoyed my time learning from Alan — he is a really nice guy. I did my CBT with him, practised my Mod 1 with him and practised my Mod 2 with him and passed both. Would highly recommend and will definitely be sending my 17-year-old son on his CBT with him.",
+    author: "Alan H.",
+    course: "CBT & Full Licence",
   },
   {
-    quote: "Brilliant school. Professional, well organised, and the bikes are in great condition. Highly recommend for anyone in Sussex.",
-    author: "David R.",
-    location: "Chichester",
+    quote:
+      "Alan and his team successfully trained myself and my best mate to both pass our full DAS first time, maintaining their 90% pass rate. I would recommend TT Motorcycle School without hesitation!",
+    author: "Simon M.",
+    course: "Direct Access",
+  },
+  {
+    quote:
+      "Thoroughly recommend TT for their service. Passed 1st time doing accelerated course. Thank you Alan for the training, and thanks to Sammi for efficient communication and booking.",
+    author: "Zak G.",
+    course: "Full Licence",
+  },
+  {
+    quote:
+      "Had such good fun and really appreciated the great instruction and advice from the team at TT Motorcycle School. Completed my CBT today and will definitely be heading back for DAS. I can't recommend highly enough, thanks guys! :)",
+    author: "Richard C.",
     course: "CBT",
-  },
-  {
-    quote: "The advanced rider training was excellent. Really challenged me to think differently about how I ride. Already noticed a difference on my commute.",
-    author: "Tom W.",
-    location: "Lewes",
-    course: "Advanced Rider",
   },
 ];
 ---
@@ -51,8 +51,9 @@ const testimonials = [
       <span class="section__eyebrow">Student Reviews</span>
       <h1 class="page-hero__title">What Our Students Say</h1>
       <p class="page-hero__sub">
-        Don't just take our word for it — here's what riders from across Sussex and the
-        surrounding area have said about training with TT Motorcycle School.
+        Don't just take our word for it — here's what riders from across Sussex
+        and the surrounding area have said about training with TT Motorcycle
+        School.
       </p>
     </div>
   </section>
@@ -60,16 +61,20 @@ const testimonials = [
   <section class="section">
     <div class="container">
       <div class="grid-3 testimonials-grid">
-        {testimonials.map(t => (
-          <div class="testimonial-card">
-            <div class="stars" aria-label="5 stars">★★★★★</div>
-            <p class="testimonial-card__quote">"{t.quote}"</p>
-            <div class="testimonial-card__footer">
-              <span class="testimonial-card__author">— {t.author}, {t.location}</span>
-              <span class="testimonial-card__course">{t.course}</span>
+        {
+          testimonials.map((t) => (
+            <div class="testimonial-card">
+              <div class="stars" aria-label="5 stars">
+                ★★★★★
+              </div>
+              <p class="testimonial-card__quote">"{t.quote}"</p>
+              <div class="testimonial-card__footer">
+                <span class="testimonial-card__author">— {t.author}</span>
+                <span class="testimonial-card__course">{t.course}</span>
+              </div>
             </div>
-          </div>
-        ))}
+          ))
+        }
       </div>
 
       <div class="testimonials-cta">
@@ -77,7 +82,12 @@ const testimonials = [
           See even more reviews on our
           <a href="/google-reviews/">Google Reviews page</a>.
         </p>
-        <CTAButton href="/cbtbooking/" label="Book Your Training" variant="accent" size="md" />
+        <CTAButton
+          href="/cbtbooking/"
+          label="Book Your Training"
+          variant="accent"
+          size="md"
+        />
       </div>
     </div>
   </section>
@@ -129,7 +139,7 @@ const testimonials = [
     text-transform: uppercase;
     letter-spacing: 0.08em;
     color: var(--color-accent);
-    background: rgba(230,51,41,0.08);
+    background: rgba(230, 51, 41, 0.08);
     padding: 2px 8px;
     border-radius: 999px;
   }
