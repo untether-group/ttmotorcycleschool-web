@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -10,10 +10,11 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="page-hero">
     <div class="container">
       <span class="section__eyebrow">Personalised Training</span>
-      <h1 class="page-hero__title">One-to-One Training</h1>
+      <h1 class="page-hero__title">One-to-One Intensive Licence Course</h1>
       <p class="page-hero__sub">
-        Your training, your pace. One-to-one sessions give you the full focus of your
-        instructor, tailored entirely to your goals and current ability.
+        A 5-day intensive course with fully dedicated instructor attention — no
+        distractions, no group pressure, just focused training tailored entirely
+        to you.
       </p>
     </div>
   </section>
@@ -21,36 +22,54 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="section">
     <div class="container content-grid">
       <div class="prose">
-        <h2>Why One-to-One?</h2>
+        <h2>Upgrade to One-to-One Tuition</h2>
         <p>
-          Group courses are great, but sometimes you need more. One-to-one training gives you
-          the undivided attention of an experienced instructor, allowing you to progress at your
-          own pace without any pressure.
+          Our 5-day intensive Motorcycle Licence Course with one-to-one tuition
+          is designed to refine your riding skills and help you achieve your
+          desired licence in a condensed timeframe — without distractions.
+        </p>
+        <p>
+          This course is suitable for all abilities, with or without a valid
+          CBT. It is also particularly well-suited to individuals who experience
+          anxiety or social challenges in group settings, or anyone who learns
+          best at their own pace with personalised attention. As the course is
+          highly focused on pre-test preparation in a short space of time,
+          students must have a baseline knowledge of riding techniques.
         </p>
 
-        <h2>Who Can Benefit?</h2>
+        <h2>Training Day Structure</h2>
+        <p>
+          A full training day lasts approximately 5–6 hours. Beyond this, mental
+          and physical fatigue can hinder progress. Start times are flexible,
+          but we aim to begin between 8:00–9:00 am where possible, finishing
+          between 2:00–3:00 pm.
+        </p>
+
+        <h2>Benefits of One-to-One Tuition</h2>
         <ul>
-          <li>Beginners who want a slower, more personalised introduction to riding</li>
-          <li>Learners preparing for Module 1 or Module 2 tests who want focused practice</li>
-          <li>Returning riders who want to rebuild confidence before riding solo</li>
-          <li>Experienced riders looking to refine specific skills</li>
-          <li>Anyone who learns better in a one-to-one environment</li>
+          <li>Flexibility to adapt sessions to your needs</li>
+          <li>Adjustable learning pace — never rushed, never held back</li>
+          <li>Uninterrupted and dedicated instructor attention</li>
+          <li>Opportunity to build deeper, more refined skills</li>
+          <li>Greater levels of interaction and in-depth feedback</li>
+          <li>A supportive environment to overcome any barriers to learning</li>
         </ul>
 
-        <h2>What's Covered?</h2>
+        <h2>Important — Theory Test Requirement</h2>
         <p>
-          You set the agenda. We'll discuss your goals before the session and build a plan
-          around them. Every session is different because every rider is different.
-        </p>
-
-        <h2>How to Book</h2>
-        <p>
-          You can book directly online, or <a href="/contact/">contact us</a> first to discuss
-          what you'd like to achieve. We'll match you with the right instructor and duration.
+          This course does not include the DVSA Motorcycle Theory Test. You must
+          hold a valid Theory Test certificate before attending. Please <a
+            href="/contact/">contact us</a
+          > if you have any questions about eligibility.
         </p>
 
         <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book a Session" variant="accent" size="md" />
+          <CTAButton
+            href="/contact/"
+            label="Enquire Now"
+            variant="accent"
+            size="md"
+          />
         </div>
       </div>
 
@@ -78,7 +97,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 280px; }
+    .content-grid {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .sidebar__card {
