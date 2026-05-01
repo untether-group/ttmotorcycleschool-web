@@ -1,15 +1,20 @@
 ---
 interface Props {
   href: string;
-  variant?: 'primary' | 'accent' | 'outline';
-  size?: 'sm' | 'md' | 'lg';
+  variant?: "primary" | "accent" | "outline";
+  size?: "sm" | "md" | "lg";
   label: string;
 }
 
-const { href, variant = 'accent', size = 'md', label } = Astro.props;
+const { href, variant = "accent", size = "md", label } = Astro.props;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const resolvedHref = href.startsWith("/") ? `${base}${href}` : href;
 ---
 
-<a href={href} class:list={['cta-btn', `cta-btn--${variant}`, `cta-btn--${size}`]}>
+<a
+  href={resolvedHref}
+  class:list={["cta-btn", `cta-btn--${variant}`, `cta-btn--${size}`]}
+>
   {label}
 </a>
 
@@ -24,7 +29,11 @@ const { href, variant = 'accent', size = 'md', label } = Astro.props;
     border-radius: var(--radius-sm);
     border: 2px solid transparent;
     cursor: pointer;
-    transition: background-color var(--transition), color var(--transition), border-color var(--transition), transform var(--transition);
+    transition:
+      background-color var(--transition),
+      color var(--transition),
+      border-color var(--transition),
+      transform var(--transition);
     text-decoration: none;
     white-space: nowrap;
   }
@@ -34,9 +43,18 @@ const { href, variant = 'accent', size = 'md', label } = Astro.props;
   }
 
   /* Sizes */
-  .cta-btn--sm { padding: 0.5rem 1rem;    font-size: var(--text-sm); }
-  .cta-btn--md { padding: 0.75rem 1.5rem; font-size: var(--text-base); }
-  .cta-btn--lg { padding: 1rem 2rem;      font-size: var(--text-lg); }
+  .cta-btn--sm {
+    padding: 0.5rem 1rem;
+    font-size: var(--text-sm);
+  }
+  .cta-btn--md {
+    padding: 0.75rem 1.5rem;
+    font-size: var(--text-base);
+  }
+  .cta-btn--lg {
+    padding: 1rem 2rem;
+    font-size: var(--text-lg);
+  }
 
   /* Variants */
   .cta-btn--accent {

@@ -1,50 +1,61 @@
 ---
 const courses = [
-  { label: 'New Rider',        href: '/new-rider/' },
-  { label: 'CBT',              href: '/cbt/' },
-  { label: 'Full Licence',     href: '/full-licence/' },
-  { label: 'Advanced Rider',   href: '/advanced-rider/' },
-  { label: 'One-to-One',       href: '/OneToOneTraining/' },
-  { label: 'Bespoke & Refresher', href: '/bespoke-refresher/' },
-  { label: 'E-bikes',          href: '/e-bikes/' },
-  { label: 'Prices',           href: '/prices/' },
+  { label: "New Rider", href: "/new-rider/" },
+  { label: "CBT", href: "/cbt/" },
+  { label: "Full Licence", href: "/full-licence/" },
+  { label: "Advanced Rider", href: "/advanced-rider/" },
+  { label: "One-to-One", href: "/OneToOneTraining/" },
+  { label: "Bespoke & Refresher", href: "/bespoke-refresher/" },
+  { label: "E-bikes", href: "/e-bikes/" },
+  { label: "Prices", href: "/prices/" },
 ];
 
 const info = [
-  { label: 'About',            href: '/about/' },
-  { label: 'What to Wear',     href: '/what-to-wear/' },
-  { label: 'Learning Resources', href: '/learning-resources/' },
-  { label: 'Testimonials',     href: '/testimonials/' },
-  { label: 'Google Reviews',   href: '/google-reviews/' },
-  { label: 'Contact',          href: '/contact/' },
+  { label: "About", href: "/about/" },
+  { label: "What to Wear", href: "/what-to-wear/" },
+  { label: "Learning Resources", href: "/learning-resources/" },
+  { label: "Testimonials", href: "/testimonials/" },
+  { label: "Google Reviews", href: "/google-reviews/" },
+  { label: "Contact", href: "/contact/" },
 ];
 
-const legal = [
-  { label: 'Terms & Conditions', href: '/terms-and-conditions/' },
-];
+const legal = [{ label: "Terms & Conditions", href: "/terms-and-conditions/" }];
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => `${base}${path}`;
 ---
 
 <footer class="footer">
   <div class="container footer__grid">
     <!-- Brand -->
     <div class="footer__brand">
-      <a href="/" aria-label="TT Motorcycle School — Home">
-        <img src="/logo.svg" alt="TT Motorcycle School" width="140" height="42" />
+      <a href={url("/")} aria-label="TT Motorcycle School — Home">
+        <img
+          src="/logo.svg"
+          alt="TT Motorcycle School"
+          width="140"
+          height="42"
+        />
       </a>
       <p class="footer__tagline">
         Professional motorcycle training in Sussex and the surrounding counties.
         Get on the road with confidence.
       </p>
-      <a href="/cbtbooking/" class="footer__cta">Book Your Training →</a>
+      <a href={url("/cbtbooking/")} class="footer__cta">Book Your Training →</a>
     </div>
 
     <!-- Courses -->
     <div class="footer__col">
       <h3 class="footer__col-title">Courses</h3>
       <ul class="footer__links">
-        {courses.map(link => (
-          <li><a href={link.href} class="footer__link">{link.label}</a></li>
-        ))}
+        {
+          courses.map((link) => (
+            <li>
+              <a href={url(link.href)} class="footer__link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
 
@@ -52,9 +63,15 @@ const legal = [
     <div class="footer__col">
       <h3 class="footer__col-title">Information</h3>
       <ul class="footer__links">
-        {info.map(link => (
-          <li><a href={link.href} class="footer__link">{link.label}</a></li>
-        ))}
+        {
+          info.map((link) => (
+            <li>
+              <a href={url(link.href)} class="footer__link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -65,9 +82,15 @@ const legal = [
         &copy; {new Date().getFullYear()} TT Motorcycle School. All rights reserved.
       </span>
       <ul class="footer__legal">
-        {legal.map(link => (
-          <li><a href={link.href} class="footer__legal-link">{link.label}</a></li>
-        ))}
+        {
+          legal.map((link) => (
+            <li>
+              <a href={url(link.href)} class="footer__legal-link">
+                {link.label}
+              </a>
+            </li>
+          ))
+        }
       </ul>
     </div>
   </div>
@@ -87,11 +110,15 @@ const legal = [
   }
 
   @media (min-width: 640px) {
-    .footer__grid { grid-template-columns: repeat(2, 1fr); }
+    .footer__grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
   }
 
   @media (min-width: 900px) {
-    .footer__grid { grid-template-columns: 2fr 1fr 1fr; }
+    .footer__grid {
+      grid-template-columns: 2fr 1fr 1fr;
+    }
   }
 
   .footer__brand img {
@@ -145,7 +172,7 @@ const legal = [
 
   .footer__bottom {
     margin-top: var(--space-12);
-    border-top: 1px solid rgba(255,255,255,0.1);
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
     padding-block: var(--space-5);
   }
 

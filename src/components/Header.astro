@@ -10,12 +10,18 @@ const navLinks = [
 ];
 
 const currentPath = Astro.url.pathname;
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => `${base}${path}`;
 ---
 
 <header class="header">
   <div class="container header__inner">
     <!-- Logo -->
-    <a href="/" class="header__logo" aria-label="TT Motorcycle School — Home">
+    <a
+      href={url("/")}
+      class="header__logo"
+      aria-label="TT Motorcycle School — Home"
+    >
       <img src="/logo.svg" alt="TT Motorcycle School" width="160" height="48" />
     </a>
 
@@ -26,7 +32,7 @@ const currentPath = Astro.url.pathname;
           navLinks.map((link) => (
             <li>
               <a
-                href={link.href}
+                href={url(link.href)}
                 class:list={[
                   "header__nav-link",
                   { "header__nav-link--active": currentPath === link.href },
@@ -42,7 +48,9 @@ const currentPath = Astro.url.pathname;
     </nav>
 
     <!-- CTA -->
-    <a href="/cbtbooking/" class="header__cta btn btn--accent">Book Now</a>
+    <a href={url("/cbtbooking/")} class="header__cta btn btn--accent"
+      >Book Now</a
+    >
 
     <!-- Mobile hamburger -->
     <button
@@ -78,7 +86,7 @@ const currentPath = Astro.url.pathname;
           navLinks.map((link) => (
             <li>
               <a
-                href={link.href}
+                href={url(link.href)}
                 class:list={[
                   "header__mobile-link",
                   { "header__mobile-link--active": currentPath === link.href },
@@ -91,7 +99,7 @@ const currentPath = Astro.url.pathname;
         }
         <li>
           <a
-            href="/cbtbooking/"
+            href={url("/cbtbooking/")}
             class="btn btn--accent"
             style="display:block;text-align:center;margin-top:1rem;"
           >
