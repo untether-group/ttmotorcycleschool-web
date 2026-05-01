@@ -1,6 +1,6 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro';
-import CTAButton from '../components/CTAButton.astro';
+import BaseLayout from "../layouts/BaseLayout.astro";
+import CTAButton from "../components/CTAButton.astro";
 ---
 
 <BaseLayout
@@ -12,8 +12,8 @@ import CTAButton from '../components/CTAButton.astro';
       <span class="section__eyebrow">Tailored to You</span>
       <h1 class="page-hero__title">Bespoke &amp; Refresher Training</h1>
       <p class="page-hero__sub">
-        Had a break from riding? Want to work on something specific? Our bespoke and
-        refresher sessions are designed around your individual needs.
+        Had a break from riding? Want to work on something specific? Our bespoke
+        and refresher sessions are designed around your individual needs.
       </p>
     </div>
   </section>
@@ -21,17 +21,46 @@ import CTAButton from '../components/CTAButton.astro';
   <section class="section">
     <div class="container content-grid">
       <div class="prose">
-        <h2>Returning to Riding?</h2>
+        <h2>Gearing Up for Gears</h2>
         <p>
-          Life happens. Many riders put their bike away for months or years and then find
-          that getting back on feels daunting. A refresher session with TT Motorcycle School
-          is the perfect way to rebuild confidence in a safe, supported environment.
+          Been riding an automatic on your CBT and ready to master a geared
+          motorcycle? We run dedicated hour-long sessions to teach you how to
+          ride a manual geared bike with confidence. Sessions run at weekends
+          and cost just <strong>£40</strong>.
+        </p>
+        <p>
+          You will need to bring your CBT certificate and driving licence to
+          attend.
+          <a href="tel:01273041925">Call us to book</a>.
+        </p>
+        <p>
+          Ideal for 17-year-olds who have been riding the 50cc scooter since
+          they were 16 and are now ready to step up!
+        </p>
+
+        <h2>Hourly Lessons</h2>
+        <p>
+          Got your CBT but can't commit to an intensive course or a full day of
+          training? We deliver hourly lessons — as many as you like — on either
+          your own bike or one of ours, at times to suit you. The perfect option
+          if you can't take that day off work.
+        </p>
+
+        <h2>Refresher Sessions</h2>
+        <p>
+          Have a licence and a bike but not quite got the confidence to get out
+          there? Or perhaps you simply haven't been in the saddle for some time
+          and you've got your eye on that Harley, V-Max or GSX-R?
+        </p>
+        <p>
+          Take some refresher sessions with us to regain your control and
+          confidence and get back to riding the way you want to.
         </p>
 
         <h2>Bespoke Sessions</h2>
         <p>
-          Not sure what you need? Tell us and we'll design a session around it. Popular
-          requests include:
+          Not sure exactly what you need? Tell us your goals and we'll design a
+          session around them. Popular requests include:
         </p>
         <ul>
           <li>Motorway riding confidence</li>
@@ -42,17 +71,13 @@ import CTAButton from '../components/CTAButton.astro';
           <li>Pre-long trip confidence building</li>
         </ul>
 
-        <h2>How It Works</h2>
-        <p>
-          Get in touch or book online. We'll have a brief chat about what you'd like to work on
-          and put together a session plan. Sessions can be on your own bike or one of ours,
-          depending on the nature of the training.
-        </p>
-
         <div style="margin-top: var(--space-8);">
-          <CTAButton href="/cbtbooking/" label="Book a Session" variant="accent" size="md" />
-          &nbsp;&nbsp;
-          <CTAButton href="/contact/" label="Ask a Question" variant="primary" size="md" />
+          <CTAButton
+            href="/contact/"
+            label="Get in Touch"
+            variant="accent"
+            size="md"
+          />
         </div>
       </div>
 
@@ -79,7 +104,9 @@ import CTAButton from '../components/CTAButton.astro';
   }
 
   @media (min-width: 900px) {
-    .content-grid { grid-template-columns: 1fr 280px; }
+    .content-grid {
+      grid-template-columns: 1fr 280px;
+    }
   }
 
   .sidebar__card {
