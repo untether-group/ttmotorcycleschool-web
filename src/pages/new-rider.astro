@@ -1,13 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTAButton from "../components/CTAButton.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout
   title="New Rider — TT Motorcycle School"
   description="New to motorcycles? Our one-hour New Rider course gives you private, off-road tuition with a DVSA instructor — ideal before your CBT. Based in Sussex."
 >
-  <section class="page-hero">
+  <section
+    class="page-hero"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${base}/images/new-rider-hero-image.jpg'); background-size: cover; background-position: center;`}
+  >
     <div class="container">
       <span class="section__eyebrow">New Rider Course</span>
       <h1 class="page-hero__title">Your First Hour on a Bike</h1>

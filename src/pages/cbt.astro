@@ -1,13 +1,17 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTAButton from "../components/CTAButton.astro";
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <BaseLayout
   title="CBT — TT Motorcycle School"
   description="Compulsory Basic Training (CBT) in Sussex with TT Motorcycle School. One day course, DVSA approved, all bikes provided. Book your CBT online."
 >
-  <section class="page-hero">
+  <section
+    class="page-hero"
+    style={`background-image: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.55)), url('${base}/images/cbt-hero-image.jpg'); background-size: cover; background-position: center;`}
+  >
     <div class="container">
       <span class="section__eyebrow">Compulsory Basic Training</span>
       <h1 class="page-hero__title">CBT — Your First Step on Two Wheels</h1>

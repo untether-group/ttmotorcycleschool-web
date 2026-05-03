@@ -6,12 +6,12 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <section class="hero" aria-label="Welcome to TT Motorcycle School">
   <div
     class="hero__bg-image"
-    style={`background-image: url('${base}/images/hero-image.png')`}
+    style={`background-image: url('${base}/images/hero-image.jpg')`}
   >
   </div>
   <div class="hero__bg-overlay"></div>
   <img
-    src={`${base}/images/hero-image.png`}
+    src={`${base}/images/hero-image.jpg`}
     alt="Motorcycle training"
     class="hero__img-mobile"
   />
@@ -62,22 +62,13 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 <style>
   .hero {
     position: relative;
-    background-color: var(--color-primary);
     color: var(--color-white);
     padding-block: var(--space-24);
     overflow: hidden;
   }
 
-  /* Subtle diagonal accent stripe */
   .hero__bg-overlay {
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(
-      135deg,
-      rgba(230, 51, 41, 0.12) 0%,
-      transparent 60%
-    );
-    pointer-events: none;
+    display: none;
   }
 
   .hero__content {
@@ -193,7 +184,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
       background-repeat: no-repeat;
       width: 100%;
       height: 100%;
-      opacity: 0.55;
+      opacity: 0.75;
       pointer-events: none;
       transition: opacity 0.3s;
     }

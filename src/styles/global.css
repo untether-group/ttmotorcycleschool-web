@@ -241,6 +241,27 @@ ol {
   max-width: 600px;
 }
 
+/* ── Photo grid ──────────────────────────────────────────── */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-3);
+}
+
+@media (min-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.photo-grid__item {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+  display: block;
+}
+
 /* ── Prose (long-form content pages) ────────────────────── */
 .prose h2 {
   font-size: var(--text-2xl);
