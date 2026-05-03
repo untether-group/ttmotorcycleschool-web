@@ -94,6 +94,24 @@ const testimonials = [
   <!-- Hero -->
   <Hero />
 
+  <!-- Photo grid -->
+  <section class="section photo-grid-section" aria-label="Training photos">
+    <div class="container">
+      <div class="photo-grid">
+        {
+          photoFiles.map((file, i) => (
+            <img
+              src={`${base}/images/photos/${encodeURIComponent(file)}`}
+              alt={`Motorcycle training photo ${i + 1}`}
+              class="photo-grid__item"
+              loading="lazy"
+            />
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
   <!-- Services -->
   <section class="section section--dark" aria-labelledby="services-heading">
     <div class="container">
@@ -164,24 +182,6 @@ const testimonials = [
           variant="outline"
           size="md"
         />
-      </div>
-    </div>
-  </section>
-
-  <!-- Photo grid -->
-  <section class="section photo-grid-section" aria-label="Training photos">
-    <div class="container">
-      <div class="photo-grid">
-        {
-          photoFiles.map((file, i) => (
-            <img
-              src={`${base}/images/photos/${encodeURIComponent(file)}`}
-              alt={`Motorcycle training photo ${i + 1}`}
-              class="photo-grid__item"
-              loading="lazy"
-            />
-          ))
-        }
       </div>
     </div>
   </section>
