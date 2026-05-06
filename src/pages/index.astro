@@ -100,12 +100,19 @@ const testimonials = [
       <div class="photo-grid">
         {
           photoFiles.map((file, i) => (
-            <img
-              src={`${base}/images/photos/${encodeURIComponent(file)}`}
-              alt={`Motorcycle training photo ${i + 1}`}
-              class="photo-grid__item"
-              loading="lazy"
-            />
+            <a
+              href="https://www.instagram.com/ttmotorcycleschool/"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="View on Instagram"
+            >
+              <img
+                src={`${base}/images/photos/${encodeURIComponent(file)}`}
+                alt={`Motorcycle training photo ${i + 1}`}
+                class="photo-grid__item"
+                loading="lazy"
+              />
+            </a>
           ))
         }
       </div>
