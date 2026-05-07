@@ -1,6 +1,9 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import CTAButton from "../components/CTAButton.astro";
+
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
+const url = (path: string) => `${base}${path}`;
 ---
 
 <BaseLayout
@@ -40,10 +43,11 @@ import CTAButton from "../components/CTAButton.astro";
         <p>
           Our ERS training is carried out by our DVSA Approved Post-Test
           Motorcycle Trainer. Courses are for a minimum of one day at <strong
-            >£200 per day</strong
+            >£250 per day</strong
           >. If you book with a friend the total fee is <strong>£320</strong> — a
           saving of £80 between you and far less than the daily training rate! So
-          grab a motorcycling buddy and <a href="/contact/">contact us</a>!
+          grab a motorcycling buddy and <a href={url("/contact/")}>contact us</a
+          >!
         </p>
 
         <h2>What You'll Receive</h2>
@@ -57,8 +61,8 @@ import CTAButton from "../components/CTAButton.astro";
         <h2>Ready to Book?</h2>
         <p>
           If you wish to know more or indeed book a course please
-          <a href="/contact/">contact us</a> so we can talk you through the process
-          and discuss dates.
+          <a href={url("/contact/")}>contact us</a> so we can talk you through the
+          process and discuss dates.
         </p>
 
         <div style="margin-top: var(--space-8);">
@@ -75,10 +79,12 @@ import CTAButton from "../components/CTAButton.astro";
         <div class="sidebar__card sidebar__card--plain">
           <h3 class="sidebar__title">Useful Links</h3>
           <ul class="sidebar__links">
-            <li><a href="/OneToOneTraining/">One-to-One Training</a></li>
-            <li><a href="/bespoke-refresher/">Bespoke & Refresher</a></li>
-            <li><a href="/prices/">Pricing</a></li>
-            <li><a href="/contact/">Contact Us</a></li>
+            <li><a href={url("/OneToOneTraining/")}>One-to-One Training</a></li>
+            <li>
+              <a href={url("/bespoke-refresher/")}>Bespoke & Refresher</a>
+            </li>
+            <li><a href={url("/prices/")}>Pricing</a></li>
+            <li><a href={url("/contact/")}>Contact Us</a></li>
           </ul>
         </div>
       </aside>
